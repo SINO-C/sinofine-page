@@ -19,7 +19,7 @@ main {
     flex-direction: column;
     align-items: center;
     align-self: center;
-    margin: -15% 0 0 0;
+    /*margin: -15% 0 0 0;*/
 }
 a{
     color:#333;
@@ -32,6 +32,7 @@ article.friends {
 }
 img.avatar {border-radius: 100%;width: 5em;height: 5em;align-self: center;}
 .friends-container {
+    width:80vw;
     display: flex;
     width: fit-content;
     align-content: center;
@@ -75,7 +76,7 @@ body {
                 <h3>HAOTOWN</h3>
                 <figure>疯狂减肥带</figure>
             </article></a><a href="https://diygod.me/"><article class="friends">
-                <img src="https://cdn.jsdelivr.net/gh/DIYgod/diygod.me@gh-pages/images/DIYgod.jpg" alt="DIYGOD " class="avatar" width="100" height="100">
+                <img src="https://avatars.githubusercontent.com/u/8266075" alt="DIYGOD " class="avatar" width="100" height="100">
                 <h3>DIYGod</h3>
                 <figure>网红</figure>
             </article></a><a href="https://yecl.net/"><article class="friends">
@@ -95,11 +96,11 @@ body {
                 <h3>Sukka</h3>
                 <figure>苏卡卡！</figure>
             </article></a><a href="https://i-meto.com/"><article class="friends">
-                <img src="https://i-meto.com/wp-content/uploads/2019/12/2666735-1.jpeg" alt="metowolf" class="avatar" width="100" height="100">
+                <img src="https://avatars.githubusercontent.com/u/2666735" alt="metowolf" class="avatar" width="100" height="100">
                 <h3>metowolf</h3>
                 <figure>萨摩！</figure>
             </article></a><a href="https://milkice.me/"><article class="friends">
-                <img src="https://static.milkice.yecdn.com/wp-content/uploads/2020/03/avatar.jpg" alt="milkice" class="avatar" width="100" height="100">
+                <img src="https://i.loli.net/2021/04/08/tJhjcL1Mwb6TeG9.png" alt="milkice" class="avatar" width="100" height="100">
                 <h3>milkice</h3>
                 <figure>奶冰！</figure>
             </article></a><a href="https://moedog.org/"><article class="friends">
@@ -127,17 +128,9 @@ body {
                 <h3>Piggy</h3>
                 <figure>好耶，是佩吉！</figure>
             </article></a></a><a href="https://blog.yuzu.im/"><article class="friends">
-                <img src="https://blog.131.yecdn.com/usr/uploads/2019/06/3153325051.jpg" alt="nil" class="avatar" width="100" height="100">
+                <img src="https://o5.cx/s/34791d90" alt="nil" class="avatar" width="100" height="100">
                 <h3>Netrvin</h3>
                 <figure>131！</figure>
-            </article></a></a></a><a href="https://roriri.one/"><article class="friends">
-                <img src="https://roriri.one/images/avatars/losses.png" alt="losses" class="avatar" width="100" height="100">
-                <h3>Losses Don</h3>
-                <figure>天才少女螺莉莉！</figure>
-            </article></a></a></a><a href="https://www.csslayer.info/wordpress/"><article class="friends">
-                <img src="https://avatars.githubusercontent.com/u/259684?s=460&v=4" alt="csslayer" class="avatar" width="100" height="100">
-                <h3>CSSlayer</h3>
-                <figure>老K！</figure>
             </article></a>
         </div>
     </main> 
