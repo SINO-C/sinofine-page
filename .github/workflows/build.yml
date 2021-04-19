@@ -10,14 +10,11 @@ jobs:
     - name: Checkout
       uses: actions/checkout@master
     - name: Build
-      run: |
-        npm install
-        npx hexo g
+      run: npm install && npx hexo g
     - name: Build and Deploy
-      uses: JamesIves/github-pages-deploy-action@releases/v4
-      with:
-        branch: gh-pages
-        folder: public
+      uses: JamesIves/github-pages-deploy-action@releases/v3
       env:
         ACCESS_TOKEN: ${{ secrets.KEYS }}
         BASE_BRANCH: master
+        BRANCH: gh-pages
+        FOLDER: public
