@@ -73,7 +73,17 @@
     
     <div class="e-content article-entry typo" itemprop="articleBody">
       
-        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+</script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
 <h2 id="一致连续性定理"><a href="#一致连续性定理" class="headerlink" title="一致连续性定理"></a>一致连续性定理</h2><p>也称 <em>Cantor定理</em> , 叙述如下:</p>
 <blockquote>
