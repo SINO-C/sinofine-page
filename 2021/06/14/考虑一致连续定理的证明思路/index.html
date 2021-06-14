@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  
+  <title>考虑一致连续定理的证明思路 | Sinofine Lotus</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+    
+      
+        <link rel="alternate" type="application/atom+xml" title="Sinofine Lotus" href="/atom.xml">
+      
+    
+  
+  <link rel="icon" href="https://cdn.jsdelivr.net/gh/sinofine/sinofine-page@gh-pages/favicon.png">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/sinofine/sinofine-page@gh-pages/css/typing.css">
+<meta name="generator" content="Hexo 5.4.0"></head>
+  
+    
+      <body>
+    
+  
+      <div id="container" class="container">
+        <article id="post-考虑一致连续定理的证明思路" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <header id="header" class="header">
+  <nav class="mobile-nav">
+    <h1 class="nickname">Sinofine Lotus</h1>
+    <ul class="mobile-nav-menu">
+      <label for="mobile-menu-toggle"><a>&#9776; Menu</a></label>
+      <input type="checkbox" id="mobile-menu-toggle"/>
+      <ul class="mobile-nav-link">
+        
+        <a href="/">Home</a>
+        
+        <a href="/archives/">Archives</a>
+        
+        <a href="/about/">About</a>
+        
+        <a href="/links/">Links</a>
+        
+      </ul>
+    </ul>
+  </nav>
+	
+		<nav id="main-nav" class="main-nav nav-left">
+	
+	
+	  <a class="main-nav-link" href="/">Home</a>
+	
+	  <a class="main-nav-link" href="/archives/">Archives</a>
+	
+	  <a class="main-nav-link" href="/about/">About</a>
+	
+	  <a class="main-nav-link" href="/links/">Links</a>
+	
+  </nav>
+</header>
+
+  <hr/>
+  <div class="article-inner">
+    
+
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      考虑一致连续定理的证明思路
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry typo" itemprop="articleBody">
+      
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.11dist/katex.min.css"integrity="sha384-Um5gpz1odJg5Z4HAmzPtgZKdTBHZdw8S29IecapCSB31ligYPhHQZIlWLYQGVoc" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.11/distkatex.min.js"integrity="sha384-YNHdsYkH6gMx9y3mRkmcJ2mFUjTd0qNQQvY9VYZgQd7DcN7env35GlmFaZ23JGp" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.11/distcontrib/auto-render.min.js" integrity="sha384-vZTG03+2yp6N6BNi5iM4rW4oIwk5DfcNdFfxkk9ZWpDriOkXX8voJBFrAO7MpVl" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+
+<h2 id="一致连续性定理"><a href="#一致连续性定理" class="headerlink" title="一致连续性定理"></a>一致连续性定理</h2><p>也称 <em>Cantor定理</em> , 叙述如下:</p>
+<blockquote>
+<p><strong>Cantor定理</strong> 闭区间连续函数一致连续.</p>
+</blockquote>
+<h3 id="考虑证明思路"><a href="#考虑证明思路" class="headerlink" title="考虑证明思路?"></a>考虑证明思路?</h3><p>如果用常规思路判断,则可以列出要证的定理:<br>$$\forall{\epsilon&gt;0;a,b\in\mathbf{I}}\exists{\delta&gt;0}, |a-b|&lt;\delta\rightarrow|f(a)-f(b)|&lt;\epsilon$$<br>而由连续知<br>$$\forall{\epsilon&gt;0;x_0 \in\mathbf{I}}\exists{\delta&gt;0}, |x-x_0|&lt;\delta\rightarrow|f(x)-f(x_0)|&lt;\epsilon\tag{1}$$<br>对于$\forall x_0\exists\delta$使上式成立, 若取$\delta = \max{\delta_0,\delta_1,\cdots,\delta_n,\cdots}$则可证.</p>
+<p>但是此处取$\delta_k$实际上涉及到未解决的无穷个取值, 则不能这样考虑.<br>由是自然想到反证: 是否存在<br>$$\exists\epsilon&gt;0\forall\delta&gt;0\exists a,b\in \mathbf{I},|a-b|&lt;\delta\rightarrow|f(a)-f(b)|&gt;\epsilon$$<br>选取点列$\delta_0,\delta_1,\cdots$使满足$\forall{k\in\mathbb{N}},\delta_k&gt;\delta_{k+1}&gt;0$, 由是可标记对应的$|a_k-b_k|&lt;\delta_k$. 由聚点定理知, 有界点列有收敛子列, 则有$b_{n_k}\rightarrow x_0$.</p>
+<p>取出对应的子列则有<br>$$\exists\epsilon&gt;0;C\in \mathbf{I}\forall\delta&gt;0,|a-C|&lt;\delta\rightarrow|f(a)-f(C)|&gt;\epsilon\tag{2}$$<br>而$(1)$与$(2)$矛盾,由是<br>$$\forall{\epsilon&gt;0;a,b\in\mathbf{I}}\exists{\delta&gt;0}, |a-b|&lt;\delta\rightarrow|f(a)-f(b)|&lt;\epsilon$$<br>成立.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <ul class="article-meta">
+        <li>
+          <span class="label">Published Date:</span>
+          <a href="/2021/06/14/%E8%80%83%E8%99%91%E4%B8%80%E8%87%B4%E8%BF%9E%E7%BB%AD%E5%AE%9A%E7%90%86%E7%9A%84%E8%AF%81%E6%98%8E%E6%80%9D%E8%B7%AF/" class="article-date">
+  <time class="dt-published" datetime="2021-06-14T16:17:59.000Z" itemprop="datePublished">2021-06-15</time>
+</a>
+
+        </li>
+        
+        
+        <hr/>
+      </ul>
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav" class="article-nav">
+  
+    <span id="article-nav-newer" class="article-nav-link-wrap newer"></span>
+  
+  
+    <a href="/2020/10/25/%E7%A7%91%E5%AD%A6%E6%97%A0%E5%9B%BD%E7%95%8C%EF%BC%8C%E5%AD%A6%E8%80%85%E6%9C%89%E7%A5%96%E5%9B%BD/" id="article-nav-older" class="article-nav-link-wrap older">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">科学无国界，学者有祖国</div>
+    </a>
+  
+</nav>
+
+
+  
+</article>
+
+
+  <section id="comments" class="comments">
+    <div id="disqus_thread"></div>
+  </section>
+
+
+
+      </div>
+      
+    <footer id="footer" class="post-footer footer">
+      
+      <hr/>
+      <div id="footerContent" class="footer-content">
+        <p>当我沉默的时候，我觉得充实；我将开口，同时感到空虚。</p>
+
+
+      </div>
+    </footer>
+
+      
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/disqusjs@1.2/dist/disqusjs.css">
+  <script>
+    (async ()=>{
+      let script = document.createElement("script");
+      script.src = URL.createObjectURL((await fetch("https://cdn.jsdelivr.net/npm/disqusjs@1.2/dist/disqus.js").then(_=>_.blob())));
+      script.onload = ()=>
+        new DisqusJS({
+        shortname: 'sinofine',
+        siteName: 'Sinofine Lotus',
+        url: 'https://sinofine.me/2021/06/14/%E8%80%83%E8%99%91%E4%B8%80%E8%87%B4%E8%BF%9E%E7%BB%AD%E5%AE%9A%E7%90%86%E7%9A%84%E8%AF%81%E6%98%8E%E6%80%9D%E8%B7%AF/',
+        title: '考虑一致连续定理的证明思路',
+        apikey: 'gI2J8BnpsPRYnccBNiCE7r0ZbnThSGomr3tZ4FRhs0OwichnbVFnKPOCwWIKYmqA',
+      });
+      document.body.appendChild(script);
+    })()
+    </script>
+
+
+
+    </div>
+  </body>
+</html>
