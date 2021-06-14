@@ -90,8 +90,8 @@ window.MathJax = {
 <p><strong>Cantor定理</strong> 闭区间连续函数一致连续.</p>
 </blockquote>
 <h3 id="考虑证明思路"><a href="#考虑证明思路" class="headerlink" title="考虑证明思路?"></a>考虑证明思路?</h3><p>如果用常规思路判断,则可以列出要证的定理:<br>$$\forall{\epsilon&gt;0;a,b\in\mathbf{I}}\exists{\delta&gt;0}, |a-b|&lt;\delta\rightarrow|f(a)-f(b)|&lt;\epsilon$$<br>而由连续知<br>$$\forall{\epsilon&gt;0;x_0 \in\mathbf{I}}\exists{\delta&gt;0}, |x-x_0|&lt;\delta\rightarrow|f(x)-f(x_0)|&lt;\epsilon\tag{1}$$<br>对于$\forall x_0\exists\delta$使上式成立, 若取$\delta = \max{\delta_0,\delta_1,\cdots,\delta_n,\cdots}$则可证.</p>
-<p>但是此处取$\delta_k$实际上涉及到未解决的无穷个取值, 则不能这样考虑.<br>由是自然想到反证: 是否存在<br>$$\exists\epsilon&gt;0\forall\delta&gt;0\exists a,b\in \mathbf{I},|a-b|&lt;\delta\rightarrow|f(a)-f(b)|&gt;\epsilon$$<br>选取点列$\delta_0,\delta_1,\cdots$使满足$\forall{k\in\mathbb{N}},\delta_k&gt;\delta_{k+1}&gt;0$, 由是可标记对应的$|a_k-b_k|&lt;\delta_k$. 由聚点定理知, 有界点列有收敛子列, 则有$a_{n_k}\rightarrow x_0$.</p>
-<p>取出对应的子列则有<br>$$\exists\epsilon&gt;0;C\in \mathbf{I}\forall\delta&gt;0,|a-x_0|&lt;\delta\rightarrow|f(a)-f(x_0)|&gt;\epsilon\tag{2}$$<br>而$(1)$与$(2)$矛盾,由是<br>$$\forall{\epsilon&gt;0;a,b\in\mathbf{I}}\exists{\delta&gt;0}, |a-b|&lt;\delta\rightarrow|f(a)-f(b)|&lt;\epsilon$$<br>成立.</p>
+<p>但是此处取$\delta_k$实际上涉及到未解决的无穷个取值, 则不能这样考虑.<br>由是自然想到反证: 是否存在<br>$$\exists\epsilon&gt;0\forall\delta&gt;0\exists a,b\in \mathbf{I},|a-b|&lt;\delta\rightarrow|f(a)-f(b)|&gt;\epsilon$$<br>选取点列$\delta_0,\delta_1,\cdots$使满足$\forall{k\in\mathbb{N}},\delta_k&gt;\delta_{k+1}&gt;0$, 由是可标记对应的$|a_k-b_k|&lt;\delta_k$. 由聚点定理知, 有界点列有收敛子列, 则有$b_{n_k}\rightarrow x_0$.</p>
+<p>取出对应的子列则有<br>$$\exists\epsilon&gt;0;C\in \mathbf{I}\forall\delta&gt;0,|a-C|&lt;\delta\rightarrow|f(a)-f(C)|&gt;\epsilon\tag{2}$$<br>而$(1)$与$(2)$矛盾,由是<br>$$\forall{\epsilon&gt;0;a,b\in\mathbf{I}}\exists{\delta&gt;0}, |a-b|&lt;\delta\rightarrow|f(a)-f(b)|&lt;\epsilon$$<br>成立.</p>
 
       
     </div>
