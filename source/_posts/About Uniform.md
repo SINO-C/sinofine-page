@@ -4,9 +4,10 @@ date: 2021-07-06 23:07:16
 tags:
 layout: draft
 ---
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
-html{font-family: "Libre Baskerville";}
+body{font-family: "Libre Baskerville";}
 </style>
 # About uniform.
 _All numbers discussed here is in $\mathbb{R}$_
