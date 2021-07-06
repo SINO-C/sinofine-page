@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  
+  <title>About Uniform[WIP] | Sinofine Lotus</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+    
+      
+        <link rel="alternate" type="application/atom+xml" title="Sinofine Lotus" href="/atom.xml">
+      
+    
+  
+  <link rel="icon" href="https://cdn.jsdelivr.net/gh/sinofine/sinofine-page@gh-pages/favicon.png">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/sinofine/sinofine-page@gh-pages/css/typing.css">
+<meta name="generator" content="Hexo 5.4.0"></head>
+  
+    
+      <body>
+    
+  
+      <div id="container" class="container">
+        <article id="draft-About Uniform" class="h-entry article article-type-draft" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <header id="header" class="header">
+  <nav class="mobile-nav">
+    <h1 class="nickname">Sinofine Lotus</h1>
+    <ul class="mobile-nav-menu">
+      <label for="mobile-menu-toggle"><a>&#9776; Menu</a></label>
+      <input type="checkbox" id="mobile-menu-toggle"/>
+      <ul class="mobile-nav-link">
+        
+        <a href="/">Home</a>
+        
+        <a href="/archives/">Archives</a>
+        
+        <a href="/about/">About</a>
+        
+        <a href="/links/">Links</a>
+        
+      </ul>
+    </ul>
+  </nav>
+	
+		<nav id="main-nav" class="main-nav nav-left">
+	
+	
+	  <a class="main-nav-link" href="/">Home</a>
+	
+	  <a class="main-nav-link" href="/archives/">Archives</a>
+	
+	  <a class="main-nav-link" href="/about/">About</a>
+	
+	  <a class="main-nav-link" href="/links/">Links</a>
+	
+  </nav>
+</header>
+
+  <hr/>
+  <div class="article-inner">
+    
+
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      About Uniform[WIP]
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry typo" itemprop="articleBody">
+      
+        <style>
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
+html{font-family: "Libre Baskerville";}
+</style>
+<h1 id="About-uniform"><a href="#About-uniform" class="headerlink" title="About uniform."></a>About uniform.</h1><p><em>All numbers discussed here is in $\mathbb{R}$</em></p>
+<p>What I’d like to discuss here is all about uniform concepts I’ve learnt since. And I wanna summarize them.</p>
+<h2 id="About-uniform-continuity"><a href="#About-uniform-continuity" class="headerlink" title="About uniform continuity"></a>About uniform continuity</h2><p>In calculus, there exists a concept called <em>Continuity</em> as expressed below:<br>$$\begin{aligned}&amp;\mbox{$f(x)$ is continuous at $x_0$}\Leftrightarrow\ &amp;\forall{\epsilon\in \mathbb R}\exists{\delta\in \mathbb R} : |x-x_0|&lt;\delta \Rightarrow |f(x)-f(x_0)|&lt;\epsilon\end{aligned} $$</p>
+<p>As is seen above, $\delta$ is somewhere dependent towards $x_0$. What if we genernalize that idea such that $\delta$ shall be dependent not to $x_0$ but to an interval? Just modify the concept as below:<br>$$\begin{aligned}&amp;\mbox{$f(x)$ is \textbf{uniform} continuous at interval $\mathbf{I}$}\Leftrightarrow\ &amp;\forall{\epsilon\in\mathbb R}\exists{\delta\in\mathbb R, x_1,x_2\in\mathbf{I}}: |x_1-x_2|&lt;\delta \Rightarrow |f(x_1)-f(x_2)&lt;\epsilon|\end{aligned}$$</p>
+<p>And with <em>Lagrange’s mean value theorem</em>, we can distinguish that in an open interval, if every point is derivable and its value is bounded ($\forall x \in\mathbf{I}\exists A \in\mathbb{R}, |f’(x)|&lt;A$), that function is then uniform continuous.</p>
+<hr>
+<p>Proof.</p>
+<p>If $f(x)$ is derivable in $\mathbf{I}$, according to <em>Lagrange’s mean value theorem</em>, we can conclude that $\frac{f(x_1)-f(x_2)}{x_1-x_2}=f’(\xi)\leq \max{f’(x)}&lt; M$, thus denoting $|x_1-x_2|\leq \delta$ and we can say<br>$$|f(x_1)-f(x_2)|&lt;M\delta&lt;\epsilon\Rightarrow \delta=\frac{\epsilon}{M}$$</p>
+<p>Just let $\delta$ be $\frac{\epsilon}{M}$ and then the requirements for <em>uniform continuity</em> are met.</p>
+<hr>
+<p>That type of continuity is particularly called <em>Lipschitz continuity</em>.</p>
+<h3 id="in-a-prettier-writing-style"><a href="#in-a-prettier-writing-style" class="headerlink" title="in a prettier writing style"></a>in a prettier writing style</h3><p>If we combine the limit’s symbols with the continuity concept, the statement can be easily expressed as follows.<br>$$\mbox{$f(x)$ is continuous at $x_0$}\Leftrightarrow\lim_{x\to x_0}f(x)=f(x_0) $$<br>The same way the uniform continuity can be as:<br>$$\begin{aligned}\mbox{$\forall{a,b}\in\mathbf{I}$, $f(x)$ is uniform continuous at $\mathbf{I}$}\Leftrightarrow\lim_{||T||\to 0}|f(a)-f(b)|=0 \(\mbox{$||T||$ denotes $|a-b|$}) \end{aligned}$$</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <ul class="article-meta">
+        <li>
+          <span class="label">Published Date:</span>
+          <a href="/2021/07/06/About%20Uniform/" class="article-date">
+  <time class="dt-published" datetime="2021-07-06T15:07:16.000Z" itemprop="datePublished">2021-07-06</time>
+</a>
+
+        </li>
+        
+        
+        <hr/>
+      </ul>
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav" class="article-nav">
+  
+    <span id="article-nav-newer" class="article-nav-link-wrap newer"></span>
+  
+  
+    <a href="/2021/06/21/%E5%85%B3%E4%BA%8E%E7%BA%BF%E6%80%A7%E5%8F%98%E6%8D%A2%E7%9A%84%E5%90%8C%E6%97%B6%E5%AF%B9%E8%A7%92%E5%8C%96/" id="article-nav-older" class="article-nav-link-wrap older">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">关于线性变换的同时对角化[WIP]</div>
+    </a>
+  
+</nav>
+
+
+  
+</article>
+
+
+  <section id="comments" class="comments">
+    <div id="disqus_thread"></div>
+  </section>
+
+
+
+      </div>
+      
+    <footer id="footer" class="post-footer footer">
+      
+      <hr/>
+      <div id="footerContent" class="footer-content">
+        <p>当我沉默的时候，我觉得充实；我将开口，同时感到空虚。</p>
+
+
+      </div>
+    </footer>
+
+      
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/disqusjs@1.2/dist/disqusjs.css">
+  <script>
+    (async ()=>{
+      let script = document.createElement("script");
+      script.src = URL.createObjectURL((await fetch("https://cdn.jsdelivr.net/npm/disqusjs@1.2/dist/disqus.js").then(_=>_.blob())));
+      script.onload = ()=>
+        new DisqusJS({
+        shortname: 'sinofine',
+        siteName: 'Sinofine Lotus',
+        url: 'https://sinofine.me/2021/07/06/About%20Uniform/',
+        title: 'About Uniform[WIP]',
+        apikey: 'gI2J8BnpsPRYnccBNiCE7r0ZbnThSGomr3tZ4FRhs0OwichnbVFnKPOCwWIKYmqA',
+      });
+      document.body.appendChild(script);
+    })()
+    </script>
+
+
+
+    </div>
+  </body>
+</html>
