@@ -30,7 +30,7 @@ article.friends {
     margin: 0.5em;
     flex-direction: column;
 }
-img.avatar {border-radius: 100%;width: 5em;height: 5em;align-self: center;}
+img.avatar {border-radius: 100%;width: 5em;height: 5em;align-self: center;object-fit:cover;}
 .friends-container {
     width:80vw;
     display: flex;
@@ -139,6 +139,10 @@ body {
                 <img src="https://nekoquq.github.io/images/static/photo_2019-10-01_13-00-13.jpg" alt="seyana" class="avatar" width="100" height="100">
                 <h3>猫村 あおい</h3>
                 <figure>喵～</figure>
+            </article></a><a href="https://axionl.me/"><article class="friends">
+                <img src="https://axionl.me/img/avatar_hub1dc8a650b495c118164fb85da876e1e_643833_300x0_resize_q75_box.jpg" alt="axionl" class="avatar" width="100" height="100">
+                <h3>初等記憶體</h3>
+                <figure>艾老师</figure>
             </article></a>
         </div>
     </main> 
