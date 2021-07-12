@@ -24,6 +24,8 @@ main {
 a{
     color:#333;
     text-decoration:none;
+    width:10em;
+    height:10em;
 }
 article.friends {
     display: flex;
