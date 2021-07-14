@@ -162,6 +162,15 @@
 <p><strong>例题<span class="math inline">\(&#39;&#39;\)</span></strong> 对于任意多的….</p>
 <p>proof. 对于<span class="math inline">\(n\)</span>维线性空间,其上的线性变换中最多有<span class="math inline">\(n^2\)</span>个线性变换的极大无关组.由<strong>例题<span class="math inline">\(&#39;\)</span></strong>知可同时对角化.设其为<span class="math inline">\(\{\mathcal A_1,\mathcal A_2,\cdots,\mathcal A_{n^2}\}\)</span>. <span class="math display">\[\forall{\mathcal B}=k_1\mathcal A_1+\cdots+k_{n^2}\mathcal A_{n^2}\mbox{且$\mathcal B$可对角化.}\]</span> 且对于<span class="math inline">\(\mathcal A_k\)</span>的每个特征基向量都有<span class="math inline">\(\mathcal A_k\varepsilon=\lambda_{k*}\varepsilon\)</span>,同样地对<span class="math inline">\(\mathcal B\)</span>作用于该向量则有 <span class="math display">\[\mathcal B\varepsilon=(\lambda_{1*}+\lambda_{2*}+\cdots+\lambda_{n^2*})\varepsilon\]</span> 即有<span class="math inline">\(\mathcal B\)</span>在这些特征向量中也能对角化.</p>
 <hr />
+<p>从线性空间和矩阵的关系,我们来考虑不变子空间在矩阵上的意义(上面的题目里面我们似乎有所涉及).</p>
+<p>由于不变子空间的元素不会被线性变换给投到外面去,所以我们纠结一众<span class="math inline">\(\mathcal A-\)</span>子空间,他们的直和为<span class="math inline">\(V\)</span>,在子空间里选定基,合起来(每个子空间的基放一块儿)就是一组<span class="math inline">\(V\)</span>的基,就能产生一个漂亮的矩阵 <span class="math display">\[
+\begin{pmatrix}
+A_1&amp; &amp; &amp; \\
+ &amp;A_2&amp; &amp; \\
+ &amp; &amp;\ddots&amp; \\
+ &amp; &amp; &amp; A_k
+\end{pmatrix}
+\]</span> 这就达到了化简的目的(?).</p>
 
       
     </div>
