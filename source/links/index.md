@@ -153,6 +153,10 @@ body {
                 <img src="https://blog.quarticcat.com/apple-touch-icon.png" alt="quarticcat" class="avatar" width="100" height="100">
                 <h3>QuarticCat</h3>
                 <figure>🔮</figure>
+            </article></a><a href="https://cubercsl.site/"><article class="friends">
+                <img src="https://cubercsl.site/img/avatar_hua4a887aea5bb6b142fecd4aa531cdef7_143548_300x0_resize_box_2.png" alt="cubercsl" class="avatar" width="100" height="100">
+                <h3>cubercsl</h3>
+                <figure>CSL 讲废话</figure>
             </article></a>
         </div>
     </main> 
