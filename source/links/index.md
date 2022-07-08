@@ -85,7 +85,7 @@ body {
                 <img src="https://i.loli.net/2020/03/18/OUNRqcV62gatu8M.png" alt="YECL" class="avatar" width="100" height="100">
                 <h3>夜绫千裕</h3>
                 <figure>认证用户（请使用代理）</figure>
-            </article></a><a href="https://yuki.yuki233.com/"><article class="friends">
+            </article></a><a href="https://me.lolipet.moe/"><article class="friends">
                 <img src="https://i.loli.net/2020/03/20/AsjGK1p3XxNyDZk.png" alt="yuki" class="avatar" width="100" height="100">
                 <h3>初雪</h3>
                 <figure>雪次元</figure>
@@ -138,10 +138,10 @@ body {
                 <h3>Evil-EXEC</h3>
                 <figure>猛男！</figure>
             </article></a><a href="https://nekoquq.github.io/"><article class="friends">
-                <img src="https://nekoquq.github.io/images/static/photo_2019-10-01_13-00-13.jpg" alt="seyana" class="avatar" width="100" height="100">
+                <!--><img src="https://nekoquq.github.io/images/static/photo_2019-10-01_13-00-13.jpg" alt="seyana" class="avatar" width="100" height="100">
                 <h3>猫村 あおい</h3>
                 <figure>喵～</figure>
-            </article></a><a href="https://axionl.me/"><article class="friends">
+            </article><--></a><a href="https://axionl.me/"><article class="friends">
                 <img src="https://axionl.me/img/avatar_hub1dc8a650b495c118164fb85da876e1e_643833_300x0_resize_q75_box.jpg" alt="axionl" class="avatar" width="100" height="100">
                 <h3>初等記憶體</h3>
                 <figure>艾老师</figure>
