@@ -61,8 +61,8 @@ feed:
 nav: left
 
 # Info
-archive_footer_content: 我不知道.
-post_footer_content: 我不知道.
+archive_footer_content: Palatino is the name of an old-style serif typeface designed by Hermann Zapf, initially released in 1949 by the Stempel foundry and later by other companies, most notably the Mergenthaler Linotype Company.
+post_footer_content: Pandoc is a Haskell library for converting from one markup format to another, and a command-line tool that uses this library.
 
 # Gitment
 gitment:
