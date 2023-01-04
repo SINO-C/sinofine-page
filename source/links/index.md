@@ -12,7 +12,7 @@ layout: false
     <title>Friends</title>
     <style>
 :root{
-    font-family:serif;
+    font-family: "Sitka","Georgia", "Source Han Serif SC", "Noto Serif CJK SC",serif;
 }
 main {
     display: flex;
@@ -25,7 +25,7 @@ a{
     color:#333;
     text-decoration:none;
     width:10em;
-    height:10em;
+    height:15em;
 }
 article.friends {
     display: flex;
@@ -34,7 +34,7 @@ article.friends {
 }
 img.avatar {border-radius: 100%;width: 5em;height: 5em;align-self: center;object-fit:cover;}
 .friends-container {
-    width:80vw;
+    max-width:120vh;
     display: flex;
     width: fit-content;
     align-content: center;
@@ -50,17 +50,22 @@ img.avatar {border-radius: 100%;width: 5em;height: 5em;align-self: center;object
 }
 h1 {
     width: fit-content;
+    border-bottom: solid;
+    margin-bottom: 2em;
 }
 body {
     display: flex;
     min-height: 100vh;
-    margin: 0;
+    margin-top: 5em;
     justify-content: center;
 }
 .home-button {
     position: fixed;
     left: 1em;
     top: 1em;
+    border: solid 2px;
+    padding: .25em .5em;
+    font-variant: all-petite-caps;
 }</style>
 </head>
 <body>
@@ -138,10 +143,10 @@ body {
                 <h3>Evil-EXEC</h3>
                 <figure>猛男！</figure>
             </article></a><a href="https://nekoquq.github.io/"><article class="friends">
-                <!--<img src="https://nekoquq.github.io/images/static/photo_2019-10-01_13-00-13.jpg" alt="seyana" class="avatar" width="100" height="100">
+                <img src="https://avatars.githubusercontent.com/u/72908391?v=4" alt="seyana" class="avatar" width="100" height="100">
                 <h3>猫村 あおい</h3>
                 <figure>喵～</figure>
-            </article>--></a><a href="https://axionl.me/"><article class="friends">
+            </article></a><a href="https://axionl.me/"><article class="friends">
                 <img src="https://axionl.me/img/avatar_hub1dc8a650b495c118164fb85da876e1e_643833_300x0_resize_q75_box.jpg" alt="axionl" class="avatar" width="100" height="100">
                 <h3>初等記憶體</h3>
                 <figure>艾老师</figure>
@@ -157,6 +162,10 @@ body {
                 <img src="https://cubercsl.site/img/avatar_hua4a887aea5bb6b142fecd4aa531cdef7_143548_300x0_resize_box_2.png" alt="cubercsl" class="avatar" width="100" height="100">
                 <h3>cubercsl</h3>
                 <figure>CSL 讲废话</figure>
+            </article></a><a href="https://zeror.xyz/"><article class="friends">
+                <img src="https://avatars.githubusercontent.com/u/98015097" alt="WhiteTraveller" class="avatar" width="100" height="100">
+                <h3>白色旅人</h3>
+                <figure>不信你问店面老板认不认识一个叫白色旅人的抽象正太。</figure>
             </article></a>
         </div>
     </main> 
