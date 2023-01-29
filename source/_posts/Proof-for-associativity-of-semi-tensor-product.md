@@ -168,8 +168,8 @@ tags: stp
 
       b,
       strong {
-          font-family: boldy;
-          font-weight: normal;
+          font-family: Georgia;
+          font-weight: bold;
       }
       h1,
       h2,
