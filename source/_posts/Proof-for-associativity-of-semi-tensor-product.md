@@ -148,8 +148,8 @@ tags: stp
       }
 
       em {
-          font-family: italic-alpha;
-          font-style: normal;
+          font-family: georgia;
+          font-style: italic;
       }
 
       @font-face {
