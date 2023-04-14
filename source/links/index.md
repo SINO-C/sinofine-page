@@ -139,7 +139,7 @@ body {
                 <h3>Netrvin</h3>
                 <figure>131！</figure>
             </article></a><a href="https://evex.one/"><article class="friends">
-                <img src="https://i.loli.net/2021/05/06/ctlqa2oYDBL8zM9.png" alt="evil" class="avatar" width="100" height="100">
+                <img src="https://evex.one/logo.png" alt="evil" class="avatar" width="100" height="100">
                 <h3>Evil-EXEC</h3>
                 <figure>猛男！</figure>
             </article></a><a href="https://nekoquq.github.io/"><article class="friends">
