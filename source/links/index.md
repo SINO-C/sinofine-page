@@ -166,6 +166,10 @@ body {
                 <img src="https://avatars.githubusercontent.com/u/98015097" alt="WhiteTraveller" class="avatar" width="100" height="100">
                 <h3>白色旅人</h3>
                 <figure>不信你问店面老板认不认识一个叫白色旅人的抽象正太。</figure>
+            </article></a><a href="https://hanako.me/"><article class="friends">
+                <img src="https://hanako.me/img/hnk.jpg" alt="hanako" class="avatar" width="100" height="100">
+                <h3>Hanako</h3>
+                <figure>hanakokoizumi捏</figure>
             </article></a>
         </div>
     </main> 
