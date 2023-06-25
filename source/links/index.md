@@ -170,6 +170,10 @@ body {
                 <img src="https://hanako.me/img/hnk.jpg" alt="hanako" class="avatar" width="100" height="100">
                 <h3>Hanako</h3>
                 <figure>hanakokoizumi捏</figure>
+            </article></a><a href="https://vitalyr.com/"><article class="friends">
+                <img src="https://avatars.githubusercontent.com/u/24508452" alt="vitalyr" class="avatar" width="100" height="100">
+                <h3>VitalyR</h3>
+                <figure>长天高远，星月粲然</figure>
             </article></a>
         </div>
     </main> 
