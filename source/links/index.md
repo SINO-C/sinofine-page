@@ -174,6 +174,10 @@ body {
                 <img src="https://avatars.githubusercontent.com/u/24508452" alt="vitalyr" class="avatar" width="100" height="100">
                 <h3>VitalyR</h3>
                 <figure>长天高远，星月粲然</figure>
+            </article></a><a href="https://mabbs.github.io"><article class="friends">
+                <img src="https://avatars.githubusercontent.com/u/17966333" alt="vitalyr" class="avatar" width="100" height="100">
+                <h3>Mayx</h3>
+                <figure>unmayx</figure>
             </article></a>
         </div>
     </main> 
