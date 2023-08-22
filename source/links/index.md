@@ -175,10 +175,15 @@ body {
                 <h3>VitalyR</h3>
                 <figure>长天高远，星月粲然</figure>
             </article></a><a href="https://mabbs.github.io"><article class="friends">
-                <img src="https://avatars.githubusercontent.com/u/17966333" alt="vitalyr" class="avatar" width="100" height="100">
+                <img src="https://avatars.githubusercontent.com/u/17966333" alt="mayx" class="avatar" width="100" height="100">
                 <h3>Mayx</h3>
                 <figure>unmayx</figure>
+            </article></a><a href="https://robust-vase.github.io/"><article class="friends">
+                <img src="https://robust-vase.github.io/img/John_King.webp" alt="robust-vase" class="avatar" width="100" height="100">
+                <h3>花瓶</h3>
+                <figure>花瓶不简单</figure>
             </article></a>
+
         </div>
     </main> 
 </body>
