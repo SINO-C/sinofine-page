@@ -40,6 +40,7 @@ icons: false
 links:
   Archives: /archives/
   Links: /links/
+  About: /about/
   Github: https://github.com/sinofine
   Matrix: https://matrix.to/#/%23nekoist%3Amatrix.org?via=matrix.org&via=nightcord.de&via=mozilla.org&via=envs.net
   RSS: /atom.xml
