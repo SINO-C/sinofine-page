@@ -94,8 +94,8 @@ body {
                 <img src="https://i.loli.net/2020/03/20/AsjGK1p3XxNyDZk.png" alt="yuki" class="avatar" width="100" height="100">
                 <h3>初雪</h3>
                 <figure>雪次元</figure>
-            </article></a><a href="https://www.mokeyjay.com/"><article class="friends">
-                <img src="https://www.mokeyjay.com/headimg.png" alt="mokeyjay" class="avatar" width="100" height="100">
+            </article></a><a href="https://mok.moe/"><article class="friends">
+                <img src="https://mok.moe/headimg.png" alt="mokeyjay" class="avatar" width="100" height="100">
                 <h3>Mokeyjay</h3>
                 <figure>超能小紫</figure>
             </article></a><a href="https://skk.moe/"><article class="friends">
