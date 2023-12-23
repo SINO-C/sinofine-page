@@ -96,8 +96,8 @@ body {
                 <figure>雪次元</figure>
             </article></a><a href="https://mok.moe/"><article class="friends">
                 <img src="https://mok.moe/headimg.png" alt="mokeyjay" class="avatar" width="100" height="100">
-                <h3>Mokeyjay</h3>
-                <figure>超能小紫</figure>
+                <h3>超能小紫</h3>
+                <figure>资深全沾工程师</figure>
             </article></a><a href="https://skk.moe/"><article class="friends">
                 <img src="https://cdn.jsdelivr.net/npm/skx@0.0.1/avatar/128x128.png" alt="sukka" class="avatar" width="100" height="100">
                 <h3>Sukka</h3>
