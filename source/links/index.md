@@ -182,6 +182,14 @@ body {
                 <img src="https://robust-vase.github.io/img/John_King.webp" alt="robust-vase" class="avatar" width="100" height="100">
                 <h3>花瓶</h3>
                 <figure>花瓶不简单</figure>
+            </article></a><a href="https://blog.weearc.top/"><article class="friends">
+                <img src="https://avatars.githubusercontent.com/u/19357165" alt="weearc" class="avatar" width="100" height="100">
+                <h3>Weearc</h3>
+                <figure>想离相惜莫相忘，且行且歌且珍惜</figure>
+            </article></a><a href="https://jerryxiao.cc/"><article class="friends">
+                <img src="https://jerryxiao.cc/site-logo.png" alt="jerryxiao" class="avatar" width="100" height="100">
+                <h3>Jerry花瓶</h3>
+                <figure>Jerry Xiao</figure>
             </article></a>
         </div>
     </main> 
