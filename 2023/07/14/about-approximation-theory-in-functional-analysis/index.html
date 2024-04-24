@@ -1,0 +1,315 @@
+<!doctype html><html lang=en-us dir=ltr><head><meta charset=utf-8><meta name=viewport content="width=device-width"><title>About Approximation theory in Functional analysis | Sinofine Lotusie</title>
+<link rel=icon href=/favicon.png><link rel=stylesheet href=/css/main.min.9f778239ff6de9665ef1f8c653d38822248a782e01996b1d23ec096e9483dd30.css integrity="sha256-n3eCOf9t6WZe8fjGU9OIIiSKeC4BmWsdI+wJbpSD3TA=" crossorigin=anonymous></head><body><header><h1>Sinofine Lotusie</h1><nav><ul><li><a href=/>Home</a></li><li><a aria-current=true class=ancestor href=/posts/>Posts</a></li><li><a href=/tags/>Tags</a></li><li><a href=/about/>About</a></li><li><a href=/friends/>Friends</a></li></ul></nav></header><main><h1 class=title-head>About Approximation theory in Functional analysis</h1><time datetime=2023-07-14T00:00:00+00:00>July 14, 2023</time><div class=abstract><div class=abstract-title>Abstract</div><p>This article investigates the approximation theory in the sense of
+functional analysis, to study the inner logics of approximation. And
+then the condition of formal series space normability is discussed.</p></div><h2 id=sec:org6833cac>Introduction</h2><p>We have once learnt the Weierstrass Approximation Theorem in Calculus
+courses, which indicates that
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>∀</mo><mi>f</mi><mo>∈</mo><mi>𝒞</mi><mrow><mo stretchy="true" form="prefix">[</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="true" form="postfix">]</mo></mrow></mrow><annotation encoding="application/x-tex">\forall f\in\mathcal{C}[a,b]</annotation></semantics></math>,
+there exists polynomial series capable of converging to
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>f</mi><annotation encoding="application/x-tex">f</annotation></semantics></math>
+uniformly. In the least square approximation problem, we also studied
+the method of Chebyshev polynomial base to approximate continuous
+functions. To analyze those issues, it is natural to introduce normed
+spaces.</p><p>To represent an element of some normed space, there is a concept
+called base, whose general idea is to destruct every element into
+combinations of some elements. In finite dimension normed spaces, base
+are widely used to simplify situations, while it’s also a definition of
+the finite dimension property of finite dimension normed spaces. With
+the aid of base theory, we can conclude that some sort of methods of
+base cannot represent banach spaces, thus cannot represent
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝒞</mi><mrow><mo stretchy="true" form="prefix">[</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="true" form="postfix">]</mo></mrow></mrow><annotation encoding="application/x-tex">\mathcal{C}[a,b]</annotation></semantics></math>
+or
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>L</mi><mi>p</mi></msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>E</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">L^p(E)</annotation></semantics></math>.</p><p>The text is based on <span class=citation data-cites="lnl2013 fa1998">[1,2]</span>.</p><h2 id=sec:orga416aee>Two types of basis for infinite dimension normed
+spaces</h2><p>For a finite normed space
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math>,
+there exists
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>∈</mo><mi>ℕ</mi></mrow><annotation encoding="application/x-tex">n\in \mathbb N</annotation></semantics></math>,
+such that exists linear irrelevant
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><msub><mi>e</mi><mn>1</mn></msub><mo>,</mo><mi>⋯</mi><mo>,</mo><msub><mi>e</mi><mi>n</mi></msub><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\{e_1,\cdots, e_n\}</annotation></semantics></math>
+where every element
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>∈</mo><mi>X</mi></mrow><annotation encoding="application/x-tex">x\in X</annotation></semantics></math>
+can be represented as
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>=</mo><msubsup><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>n</mi></msubsup><msub><mi>k</mi><mi>i</mi></msub><msub><mi>e</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">x=\sum_{i=1}^{n}k_ie_i</annotation></semantics></math>.
+For infinite dimension normed spaces, the infinity term must exists,
+either in the sum or in the cardinality of base.</p><p>The concern of base is from the naive thought that every polynomial
+can be represented using the linear combination of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><msup><mi>x</mi><mi>i</mi></msup><mo stretchy="false" form="prefix">|</mo><mi>i</mi><mo>∈</mo><mi>ℕ</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\{x^i|i\in \mathbb N\}</annotation></semantics></math>.
+If elements in a normed space can be approximated in polynomial, then
+the base of normed space should be approximated in polynomial, or more
+precise, to be represented in some sort of polynomial base. Thus we need
+to learn something about base.</p><h3 id=sec:orgdccf97b>Hamel basis</h3><p>Firstly we define
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>span</mo><mo stretchy="false" form="prefix">{</mo><msub><mi>e</mi><mi>i</mi></msub><msub><mo stretchy="false" form="postfix">}</mo><mrow><mi>i</mi><mo>∈</mo><mi>I</mi></mrow></msub></mrow><annotation encoding="application/x-tex">\operatorname{span}\{e_i\}_{i\in I}</annotation></semantics></math>
+as<div class=displaymath-container><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>span</mo><mo stretchy="false" form="prefix">{</mo><msub><mi>e</mi><mi>i</mi></msub><msub><mo stretchy="false" form="postfix">}</mo><mrow><mi>i</mi><mo>∈</mo><mi>I</mi></mrow></msub><mo>=</mo><mrow><mo stretchy="true" form="prefix">{</mo><munderover><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>N</mi></munderover><msub><mi>k</mi><mi>i</mi></msub><msub><mi>e</mi><mi>i</mi></msub><mo stretchy="false" form="prefix">|</mo><mi>N</mi><mo>∈</mo><mi>ℕ</mi><mo>,</mo><msub><mi>k</mi><mi>i</mi></msub><mo>∈</mo><mi>𝕂</mi><mo stretchy="true" form="postfix">}</mo></mrow></mrow><annotation encoding="application/x-tex">\operatorname{span}\{e_i\}_{i\in I} = \left\{\sum_{i=1}^Nk_ie_i|N\in \mathbb N,
+k_i\in \mathbb K\right\}</annotation></semantics></math></div>If we let
+the base have infinite cardinity, whether countable or uncountable, and
+let the whole space be
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>X</mi><mo>=</mo><mo>span</mo><mo stretchy="false" form="prefix">{</mo><msub><mi>e</mi><mi>i</mi></msub><msub><mo stretchy="false" form="postfix">}</mo><mrow><mi>i</mi><mo>∈</mo><mi>I</mi></mrow></msub></mrow><annotation encoding="application/x-tex">X=\operatorname{span}\{e_i\}_{i\in I}</annotation></semantics></math>,
+where
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><msub><mi>e</mi><mi>i</mi></msub><msub><mo stretchy="false" form="postfix">}</mo><mrow><mi>i</mi><mo>∈</mo><mi>I</mi></mrow></msub></mrow><annotation encoding="application/x-tex">\{e_i\}_{i\in I}</annotation></semantics></math>
+are linear independent, then we got so called Hamel basis.</p><p>From the definition we instantly get that every element in a space
+with Hamel basis can be represented as finite sum of Hamel base.</p><p>Actually from Zorn’s lemma it’s easy to see that every linear space
+has its Hamel base.</p><div class=lemma><p><strong>Lemma 1</strong> (Zorn’s lemma). <em>Let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">(</mo><mi>ℱ</mi><mo>,</mo><mo>≺</mo><mo stretchy="true" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(\mathcal F,\prec)</annotation></semantics></math>
+is a partial order set, if every order complete subset has its upper
+bound, then there is maximal element in
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">(</mo><mi>ℱ</mi><mo>,</mo><mo>≺</mo><mo stretchy="true" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(\mathcal F,\prec)</annotation></semantics></math>.</em></p></div><p>And then we can prove the statement above.</p><div class=proposition><p><strong>Proposition 1</strong>. <em>Every linear space has its Hamel
+base.</em></p></div><div class=proof><p><em>Proof.</em> Let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>ℱ</mi><annotation encoding="application/x-tex">\mathcal F</annotation></semantics></math>
+be the set containing all linear independent sets, then we define the
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mo>≺</mo><annotation encoding="application/x-tex">\prec</annotation></semantics></math>:
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><msub><mi>e</mi><mi>i</mi></msub><msub><mo stretchy="false" form="postfix">}</mo><mrow><mi>i</mi><mo>∈</mo><mi>I</mi></mrow></msub><mo>≺</mo><mo stretchy="false" form="prefix">{</mo><msub><mi>e</mi><mi>j</mi></msub><msub><mo stretchy="false" form="postfix">}</mo><mrow><mi>j</mi><mo>∈</mo><mi>J</mi></mrow></msub><mo>⇔</mo><mo stretchy="false" form="prefix">{</mo><msub><mi>e</mi><mi>i</mi></msub><msub><mo stretchy="false" form="postfix">}</mo><mrow><mi>i</mi><mo>∈</mo><mi>I</mi></mrow></msub><mo>⊂</mo><mo stretchy="false" form="prefix">{</mo><msub><mi>e</mi><mi>j</mi></msub><msub><mo stretchy="false" form="postfix">}</mo><mrow><mi>j</mi><mo>∈</mo><mi>J</mi></mrow></msub></mrow><annotation encoding="application/x-tex">\{e_i\}_{i\in I}\prec \{e_j\}_{j\in J} \iff
+\{e_i\}_{i\in I}\subset \{e_j\}_{j\in J}</annotation></semantics></math>.</p><p>For any order complete subset
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>𝒜</mi><annotation encoding="application/x-tex">\mathcal A</annotation></semantics></math>,
+consider the set
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>B</mi><mo>=</mo><msub><mo>⋃</mo><mrow><mi>E</mi><mo>∈</mo><mi>𝒜</mi></mrow></msub><mi>E</mi></mrow><annotation encoding="application/x-tex">B = \bigcup_{E\in
+\mathcal A} E</annotation></semantics></math>. As
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>𝒜</mi><annotation encoding="application/x-tex">\mathcal A</annotation></semantics></math>
+is order complete, then for any finite subset
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>F</mi><mo>∈</mo><mi>G</mi></mrow><annotation encoding="application/x-tex">F\in G</annotation></semantics></math>,
+exists
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>E</mi><mo>∈</mo><mi>𝒜</mi></mrow><annotation encoding="application/x-tex">E\in \mathcal A</annotation></semantics></math>
+such that
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>F</mi><mo>⊆</mo><mi>E</mi></mrow><annotation encoding="application/x-tex">F\subseteq E</annotation></semantics></math>.
+Thus the elements in
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>B</mi><annotation encoding="application/x-tex">B</annotation></semantics></math>
+are linear independent, so
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>B</mi><mo>∈</mo><mi>ℱ</mi></mrow><annotation encoding="application/x-tex">B\in \mathcal F</annotation></semantics></math>
+and for any
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>E</mi><mo>∈</mo><mi>𝒜</mi></mrow><annotation encoding="application/x-tex">E\in \mathcal A</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>E</mi><mo>⊆</mo><mi>B</mi></mrow><annotation encoding="application/x-tex">E\subseteq B</annotation></semantics></math>.
+That is,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>B</mi><annotation encoding="application/x-tex">B</annotation></semantics></math>
+is an upper bound of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>𝒜</mi><annotation encoding="application/x-tex">\mathcal A</annotation></semantics></math>.</p><p>Then according to Zorn’s lemma, there exists a maximum element
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>M</mi><annotation encoding="application/x-tex">M</annotation></semantics></math>,
+which is a Hamel base of the space. ◻</p></div><p>Actually there are many base that are Hamel base, such as
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><msup><mi>x</mi><mi>i</mi></msup><mo stretchy="false" form="prefix">|</mo><mi>i</mi><mo>∈</mo><mi>ℕ</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\{x^i|i\in \mathbb
+N\}</annotation></semantics></math>. However, the next subsection showed
+that those (countable) Hamel base are not much helpful as they are not
+fit in Banach spaces.</p><h3 id=sec:orgbf63ba4>The inability of countable Hamel base to
+represent a infinite dimension Banach space</h3><p>Although Hamel base exists in all linear spaces, What we are aware of
+are countable base, which are incompatible with infinite dimension
+Banach spaces. The incompatibility can then be derived from Baire
+Category Theorem.</p><div class=theorem><p><strong>Theorem 2</strong> (Baire Category Theorem). <em>A banach
+space cannot be a countable union of nowhere dense sets.</em></p></div><p>Then we can get the following theorem.</p><div class=theorem><p><strong>Theorem 3</strong>. <em>A Banach space with infinity
+dimension cannot have a countable Hamel base.</em></p></div><div class=proof><p><em>Proof.</em> If a Banach space
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">(</mo><mi>X</mi><mo>,</mo><mo stretchy="false" form="prefix">∥</mo><mi>⋅</mi><mo stretchy="false" form="postfix">∥</mo><mo stretchy="true" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(X,\lVert \cdot \rVert )</annotation></semantics></math>
+have a countable Hamel base, denoting
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><msub><mi>e</mi><mi>i</mi></msub><msubsup><mo stretchy="false" form="postfix">}</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>∞</mi></msubsup></mrow><annotation encoding="application/x-tex">\{e_i\}_{i=1}^{\infty}</annotation></semantics></math>,
+then we can decompose the space into union of closed sets. Denote
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>F</mi><mi>n</mi></msub><annotation encoding="application/x-tex">F_n</annotation></semantics></math>
+as follows,<div class=displaymath-container><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>F</mi><mi>n</mi></msub><mo>=</mo><mo>span</mo><mo stretchy="false" form="prefix">{</mo><msub><mi>e</mi><mi>i</mi></msub><msubsup><mo stretchy="false" form="postfix">}</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>n</mi></msubsup><mo>,</mo></mrow><annotation encoding="application/x-tex">F_n = \operatorname{span}\{e_i\}_{i=1}^{n},</annotation></semantics></math></div>then we get that
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>X</mi><mo>=</mo><msubsup><mo>⋃</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>∞</mi></msubsup><msub><mi>F</mi><mi>n</mi></msub></mrow><annotation encoding="application/x-tex">X=\bigcup_{i=1}^{\infty}F_{n}</annotation></semantics></math>,
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>F</mi><mi>n</mi></msub><annotation encoding="application/x-tex">F_n</annotation></semantics></math>
+are closed (as components of every base are closed, which is a
+conclusion of that
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>𝕂</mi><annotation encoding="application/x-tex">\mathbb K</annotation></semantics></math>
+is banach). To prove that
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>F</mi><mi>n</mi></msub><annotation encoding="application/x-tex">F_n</annotation></semantics></math>
+are nowhere dense, we need to show that the internal of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>F</mi><mi>n</mi></msub><annotation encoding="application/x-tex">F_n</annotation></semantics></math>
+is empty. Denote the internal of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>F</mi><mi>n</mi></msub><annotation encoding="application/x-tex">F_n</annotation></semantics></math>
+to be
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>int</mo><msub><mi>F</mi><mi>n</mi></msub></mrow><annotation encoding="application/x-tex">\mathop{\mathrm{int}}F_n</annotation></semantics></math>.
+If
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>int</mo><msub><mi>F</mi><mi>n</mi></msub><mo>≠</mo><mi>∅</mi></mrow><annotation encoding="application/x-tex">\mathop{\mathrm{int}}F_n\neq \emptyset</annotation></semantics></math>,
+then there exists closed ball
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover><mrow><mi>B</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo>,</mo><mi>r</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><mo accent="true">¯</mo></mover><mo>⊂</mo><msub><mi>F</mi><mi>n</mi></msub></mrow><annotation encoding="application/x-tex">\overline{B(x,r)}\subset F_n</annotation></semantics></math>.
+Then we can move
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>e</mi><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></msub><annotation encoding="application/x-tex">e_{n+1}</annotation></semantics></math>
+into
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mover><mrow><mi>B</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo>,</mo><mi>r</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><mo accent="true">¯</mo></mover><annotation encoding="application/x-tex">\overline{B(x,r)}</annotation></semantics></math>,
+and let y be follows,<div class=displaymath-container><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mo>=</mo><mfrac><mrow><mi>r</mi><msub><mi>x</mi><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></msub></mrow><mrow><mo stretchy="false" form="prefix">∥</mo><msub><mi>x</mi><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></msub><mo stretchy="false" form="postfix">∥</mo></mrow></mfrac><mo>+</mo><mi>x</mi><mo>,</mo></mrow><annotation encoding="application/x-tex">y = \frac{rx_{n+1}}{\lVert x_{n+1} \rVert } + x,</annotation></semantics></math></div>Thus
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mo>∈</mo><mover><mrow><mi>B</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo>,</mo><mi>r</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><mo accent="true">¯</mo></mover><mo>∈</mo><msub><mi>F</mi><mi>n</mi></msub></mrow><annotation encoding="application/x-tex">y\in \overline{B(x,r)}\in F_n</annotation></semantics></math>,
+Thus
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>e</mi><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>∈</mo><msub><mi>F</mi><mi>n</mi></msub></mrow><annotation encoding="application/x-tex">e_{n+1}\in F_{n}</annotation></semantics></math>.
+Contradict.</p><p>Thus
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math>
+is the countable union of nowhere dense sets
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><msub><mi>F</mi><mi>n</mi></msub><msubsup><mo stretchy="false" form="postfix">}</mo><mrow><mi>n</mi><mo>=</mo><mn>1</mn></mrow><mi>∞</mi></msubsup></mrow><annotation encoding="application/x-tex">\{F_n\}_{n=1}^{\infty}</annotation></semantics></math>,
+contradict. ◻</p></div><p>Such theorem shows that any polynomial space cannot be banach with
+any norm.</p><h3 id=sec:org8368db2>Schauder basis</h3><p>The shortcomings of the Hamel base is shown before, and seems that we
+need some other basis difinition for better dealing with infinite
+dimension spaces like Banach spaces. the Schauder base is one of the
+suitable base.</p><p>Let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><msub><mi>e</mi><mi>n</mi></msub><msubsup><mo stretchy="false" form="postfix">}</mo><mrow><mi>n</mi><mo>=</mo><mn>1</mn></mrow><mi>∞</mi></msubsup><mo>⊂</mo><mi>X</mi></mrow><annotation encoding="application/x-tex">\{e_n\}_{n=1}^{\infty}\subset X</annotation></semantics></math>.
+If for every
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>∈</mo><mi>X</mi></mrow><annotation encoding="application/x-tex">x\in X</annotation></semantics></math>,
+there exists
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>=</mo><msubsup><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>∞</mi></msubsup><msub><mi>k</mi><mi>i</mi></msub><msub><mi>e</mi><mi>i</mi></msub><mo>,</mo><msub><mi>k</mi><mi>i</mi></msub><mo>∈</mo><mi>𝕂</mi></mrow><annotation encoding="application/x-tex">x=\sum_{i=1}^{\infty}k_ie_i, k_i\in \mathbb K</annotation></semantics></math>,
+then we call
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><msub><mi>e</mi><mi>n</mi></msub><msubsup><mo stretchy="false" form="postfix">}</mo><mrow><mi>n</mi><mo>=</mo><mn>1</mn></mrow><mi>∞</mi></msubsup><mo>⊂</mo><mi>X</mi></mrow><annotation encoding="application/x-tex">\{e_n\}_{n=1}^{\infty}\subset X</annotation></semantics></math>
+a Schauder base of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math>.</p><p>Worth attention that power basis is not a Schauder basis, although
+according to the Stone-Weierstrass Theorem, the span of power basis is
+dense in the space
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝒞</mi><mrow><mo stretchy="true" form="prefix">[</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="true" form="postfix">]</mo></mrow></mrow><annotation encoding="application/x-tex">\mathcal C[a,b]</annotation></semantics></math>.
+For example, let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo>∈</mo><mi>𝒞</mi><mrow><mo stretchy="true" form="prefix">[</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo stretchy="true" form="postfix">]</mo></mrow></mrow><annotation encoding="application/x-tex">f\in \mathcal C[0,1]</annotation></semantics></math>,
+defined as follows,<div class=displaymath-container><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mrow><mo stretchy="true" form="prefix">{</mo><mtable><mtr><mtd columnalign="left" style="text-align: left"><mn>0</mn><mo>,</mo></mtd><mtd columnalign="left" style="text-align: left"><mi>x</mi><mo>∈</mo><mo stretchy="false" form="prefix">[</mo><mn>0</mn><mo>,</mo><mn>1</mn><mi>/</mi><mn>2</mn><mo stretchy="false" form="postfix">)</mo><mo>,</mo></mtd></mtr><mtr><mtd columnalign="left" style="text-align: left"><mn>2</mn><mi>x</mi><mo>−</mo><mn>1</mn><mo>,</mo></mtd><mtd columnalign="left" style="text-align: left"><mtext mathvariant="normal">otherwise.</mtext></mtd></mtr></mtable></mrow></mrow><annotation encoding="application/x-tex">f(x)=\begin{cases}
+0,&amp; x\in[0,1/2),\\
+2x-1,&amp; \text{otherwise.}
+\end{cases}</annotation></semantics></math></div>If power basis is a
+Schauder basis, then it should converge uniformly on the interval
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">[</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo stretchy="true" form="postfix">]</mo></mrow><annotation encoding="application/x-tex">[0,1]</annotation></semantics></math>,
+thus it converges to
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>0</mn><annotation encoding="application/x-tex">0</annotation></semantics></math>
+uniformly in
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">[</mo><mn>0</mn><mo>,</mo><mn>1</mn><mi>/</mi><mn>2</mn><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">[0,1/2)</annotation></semantics></math>,
+from which we concluded that
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo>≡</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">f\equiv 0</annotation></semantics></math>,
+contradict.</p><h2 id=sec:org394e8ce><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝒞</mi><mrow><mo stretchy="true" form="prefix">[</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="true" form="postfix">]</mo></mrow></mrow><annotation encoding="application/x-tex">\mathcal{C}[a,b]</annotation></semantics></math>
+and Stone-Weierstrass Theorem</h2><p>As is known in the Functional analysis, the norm of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝒞</mi><mrow><mo stretchy="true" form="prefix">[</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="true" form="postfix">]</mo></mrow></mrow><annotation encoding="application/x-tex">\mathcal C[a,b]</annotation></semantics></math>
+means that convergence in the
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝒞</mi><mrow><mo stretchy="true" form="prefix">[</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="true" form="postfix">]</mo></mrow></mrow><annotation encoding="application/x-tex">\mathcal C[a,b]</annotation></semantics></math>
+is meant uniform convergence to some continuous function in the interval
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝒞</mi><mrow><mo stretchy="true" form="prefix">[</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="true" form="postfix">]</mo></mrow></mrow><annotation encoding="application/x-tex">\mathcal C[a,b]</annotation></semantics></math>.
+From Stone-Weierstrass Theorem, we get that every element from
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝒞</mi><mrow><mo stretchy="true" form="prefix">[</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="true" form="postfix">]</mo></mrow></mrow><annotation encoding="application/x-tex">\mathcal C[a,b]</annotation></semantics></math>,
+there is polynomial series that converges uniformly to the element.
+Stone-Weierstrass Theorem is not limited on the interval, but on the
+compact set.</p><p>Consider an algebra, which is meant an vector space
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math>
+on
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝕂</mi><mo>=</mo><mi>ℂ</mi></mrow><annotation encoding="application/x-tex">\mathbb K=\mathbb C</annotation></semantics></math>
+or
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝕂</mi><mo>=</mo><mi>ℝ</mi></mrow><annotation encoding="application/x-tex">\mathbb K=\mathbb R</annotation></semantics></math>,
+with multiplication arithmetic<div class=displaymath-container><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>∈</mo><mi>X</mi><mo>×</mo><mi>X</mi><mo>→</mo><mi>x</mi><mi>y</mi><mo>∈</mo><mi>X</mi><mo>,</mo></mrow><annotation encoding="application/x-tex">(x,y)\in X\times
+X\rightarrow xy\in X,</annotation></semantics></math></div>meeting the
+following properties: for any
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>,</mo><mi>y</mi><mo>,</mo><mi>z</mi><mo>∈</mo><mi>X</mi></mrow><annotation encoding="application/x-tex">x,y,z\in X</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>α</mi><mo>,</mo><mi>β</mi><mo>∈</mo><mi>𝕂</mi></mrow><annotation encoding="application/x-tex">\alpha,\beta\in
+\mathbb K</annotation></semantics></math>,</p><ol><li><p>(Associativity)
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mi>y</mi><mo stretchy="true" form="postfix">)</mo></mrow><mi>z</mi><mo>=</mo><mi>x</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>y</mi><mi>z</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">(xy)z=x(yz)</annotation></semantics></math>;</p></li><li><p>(Distributivity)
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>y</mi><mo>+</mo><mi>z</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mi>x</mi><mi>y</mi><mo>+</mo><mi>x</mi><mi>z</mi></mrow><annotation encoding="application/x-tex">x(y+z)=xy+xz</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo>+</mo><mi>y</mi><mo stretchy="true" form="postfix">)</mo></mrow><mi>z</mi><mo>=</mo><mi>x</mi><mi>z</mi><mo>+</mo><mi>y</mi><mi>z</mi></mrow><annotation encoding="application/x-tex">(x+y)z=xz+yz</annotation></semantics></math>;</p></li><li><p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">(</mo><mi>α</mi><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mo stretchy="true" form="prefix">(</mo><mi>β</mi><mi>y</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>α</mi><mi>β</mi><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mi>y</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">(\alpha x)(\beta y)=(\alpha\beta)(xy)</annotation></semantics></math>.</p></li></ol><p>And subalgebra means subspace itself is an algebra.</p><p>Now we can introduce the Stone-Weierstrass Theorem. In Calculus
+courses, the Weierstrass Approximation Theorem is usually conducted with
+Bernstein polynomials. However, the generalized theorem only needs some
+basic assumption on a compact space
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>K</mi><annotation encoding="application/x-tex">K</annotation></semantics></math>
+and its normed space
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝒞</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>K</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\mathcal C(K)</annotation></semantics></math>.</p><div class=theorem><p><strong>Theorem 4</strong> (Stone-Weierstrass Theorem). <em>Denote
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>K</mi><annotation encoding="application/x-tex">K</annotation></semantics></math>
+to be a compact metric space. Let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>𝒜</mi><annotation encoding="application/x-tex">\mathcal A</annotation></semantics></math>
+be the subalgebra of real space
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝒞</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>K</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\mathcal C(K)</annotation></semantics></math>,
+with following properties,</em></p><ol><li><p><em>Exists constant function
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>c</mi><mo>∈</mo><mi>𝒜</mi></mrow><annotation encoding="application/x-tex">c\in \mathcal A</annotation></semantics></math>;</em></p></li><li><p><em>For any different point
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ξ</mi><mo>,</mo><mi>η</mi><mo>∈</mo><mi>K</mi></mrow><annotation encoding="application/x-tex">\xi,\eta\in K</annotation></semantics></math>,
+exists function
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>g</mi><mo>∈</mo><mi>𝒜</mi></mrow><annotation encoding="application/x-tex">g\in \mathcal{A}</annotation></semantics></math>,
+such that
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>g</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>ξ</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>≠</mo><mi>g</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>η</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">g(\xi)\neq g(\eta)</annotation></semantics></math>.</em></p></li></ol><p><em>Then
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>𝒜</mi><annotation encoding="application/x-tex">\mathcal{A}</annotation></semantics></math>
+is dense in
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝒞</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>K</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\mathcal{C}(K)</annotation></semantics></math>.</em></p></div><p>Using the Stone-Weierstrass Theorem, it’s easy to obtain the
+Weierstrass Approximation Theorem.</p><div class=corollary><p><strong>Corollary 1</strong> (Weierstrass Approximation Theorem).
+<em>Denote
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>K</mi><annotation encoding="application/x-tex">K</annotation></semantics></math>
+to be compact subset of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>ℝ</mi><mi>n</mi></msup><annotation encoding="application/x-tex">\mathbb{R}^{n}</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝒫</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>K</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\mathcal{P}(K)</annotation></semantics></math>
+is all the n-variate polynomials restricted on
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>K</mi><annotation encoding="application/x-tex">K</annotation></semantics></math>,
+then
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝒫</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>K</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\mathcal{P}(K)</annotation></semantics></math>
+is dense in
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝒞</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>K</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\mathcal{C}(K)</annotation></semantics></math>.</em></p></div><div class=proof><p><em>Proof.</em> It’s obvious that constant function is polynomials,
+thus the first requirement is met.</p><p>For any different point
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ξ</mi><mo>,</mo><mi>η</mi><mo>∈</mo><mi>K</mi></mrow><annotation encoding="application/x-tex">\xi,\eta\in K</annotation></semantics></math>,
+exists
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>≤</mo><mi>i</mi><mo>≤</mo><mi>n</mi></mrow><annotation encoding="application/x-tex">1\le i\le n</annotation></semantics></math>,
+such that
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>ξ</mi><mi>i</mi></msub><mo>≠</mo><msub><mi>η</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">\xi_{i}\ne \eta_{i}</annotation></semantics></math>,
+thus we may let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>g</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><msub><mi>x</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">g(x)=x_i</annotation></semantics></math>,
+where
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>x</mi><mi>i</mi></msub><annotation encoding="application/x-tex">x_i</annotation></semantics></math>
+denotes the ith component of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math>.
+Thus the second requirement is met.</p><p>According to the Stone-Weierstrass Theorem,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝒫</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>K</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\mathcal{P}(K)</annotation></semantics></math>
+is dense in
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝒞</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>K</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\mathcal{C}(K)</annotation></semantics></math>. ◻</p></div><p>The proof is quite simple, owing to the strength of Stone-Weierstrass
+Theorem.</p><p>There is also a complex space version of Stone-Weierstrass Theorem,
+using which we can conclude the trigonometric version of Weierstrass
+Approximation Theorem.</p><div class=theorem><p><strong>Theorem 5</strong> (Complex Stone-Weierstrass Theorem).
+<em>Denote
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>K</mi><annotation encoding="application/x-tex">K</annotation></semantics></math>
+to be a compact metric space. Let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>𝒜</mi><annotation encoding="application/x-tex">\mathcal A</annotation></semantics></math>
+be the subalgebra of complex space
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝒞</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>K</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\mathcal C(K)</annotation></semantics></math>,
+with following properties,</em></p><ol><li><p><em>Exists constant function
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>c</mi><mo>∈</mo><mi>𝒜</mi></mrow><annotation encoding="application/x-tex">c\in \mathcal A</annotation></semantics></math>;</em></p></li><li><p><em>For any different point
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ξ</mi><mo>,</mo><mi>η</mi><mo>∈</mo><mi>K</mi></mrow><annotation encoding="application/x-tex">\xi,\eta\in K</annotation></semantics></math>,
+exists function
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>g</mi><mo>∈</mo><mi>𝒜</mi></mrow><annotation encoding="application/x-tex">g\in \mathcal{A}</annotation></semantics></math>,
+such that
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>g</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>ξ</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>≠</mo><mi>g</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>η</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">g(\xi)\neq g(\eta)</annotation></semantics></math>.</em></p></li><li><p><em>If
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>g</mi><mo>∈</mo><mi>𝒜</mi></mrow><annotation encoding="application/x-tex">g\in \mathcal{A}</annotation></semantics></math>,
+then
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover><mi>g</mi><mo accent="true">¯</mo></mover><mo>∈</mo><mi>𝒜</mi></mrow><annotation encoding="application/x-tex">\overline{g}\in \mathcal{A}</annotation></semantics></math>.</em></p></li></ol><p><em>Then
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>𝒜</mi><annotation encoding="application/x-tex">\mathcal{A}</annotation></semantics></math>
+is dense in
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝒞</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>K</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\mathcal{C}(K)</annotation></semantics></math>.</em></p></div><p>The Weierstrass Approximation Theorems told us that
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝒫</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>K</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\mathcal{P}(K)</annotation></semantics></math>
+is dense in
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝒞</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>K</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\mathcal{C}(K)</annotation></semantics></math>,
+in another word, that is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝒞</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>K</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>⊆</mo><mover><mrow><mi>𝒫</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>K</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><mo accent="true">¯</mo></mover></mrow><annotation encoding="application/x-tex">\mathcal{C}(K)\subseteq
+\overline{\mathcal{P}(K)}</annotation></semantics></math>. The latter is
+then a restrict of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝒫</mi><mo stretchy="false" form="prefix">⟦</mo><msub><mi>X</mi><mi>i</mi></msub><msubsup><mo stretchy="false" form="postfix">⟧</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>n</mi></msubsup></mrow><annotation encoding="application/x-tex">\mathcal{P}\lBrack
+X_i\rBrack_{i=1}^{n}</annotation></semantics></math>.</p><h2 id=sec:org792cde0><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mrow><mo stretchy="true" form="prefix">[</mo><mi>x</mi><mo stretchy="true" form="postfix">]</mo></mrow></mrow><annotation encoding="application/x-tex">P[x]</annotation></semantics></math>
+and its completion
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mo stretchy="false" form="prefix">⟦</mo><mi>x</mi><mo stretchy="false" form="postfix">⟧</mo></mrow><annotation encoding="application/x-tex">P\lBrack x\rBrack</annotation></semantics></math>,
+Normability problem</h2><p>As is shown in the sections above,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝒞</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>K</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>⊆</mo><mover><mrow><mi>𝒫</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>K</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><mo accent="true">¯</mo></mover></mrow><annotation encoding="application/x-tex">\mathcal{C}(K)\subseteq
+\overline{\mathcal{P}(K)}</annotation></semantics></math>. What’s more,
+there is elements such that
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover><mrow><mi>𝒫</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>K</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><mo accent="true">¯</mo></mover><mo>−</mo><mi>𝒞</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>K</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>≠</mo><mi>∅</mi></mrow><annotation encoding="application/x-tex">\overline{\mathcal{P}(K)}-\mathcal{C}(K)\neq \emptyset</annotation></semantics></math>.
+For example, let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>K</mi><mo>=</mo><mrow><mo stretchy="true" form="prefix">[</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo stretchy="true" form="postfix">]</mo></mrow></mrow><annotation encoding="application/x-tex">K=[0,1]</annotation></semantics></math>,
+then
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mo>∑</mo><mrow><mi>n</mi><mo>=</mo><mn>1</mn></mrow><mi>∞</mi></msubsup><msup><mrow><mo stretchy="true" form="prefix">(</mo><mn>2</mn><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow><mi>n</mi></msup></mrow><annotation encoding="application/x-tex">\sum_{n=1}^{\infty}(2x)^{n}</annotation></semantics></math>
+diverges on the
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mo>sup</mo><annotation encoding="application/x-tex">\operatorname{sup}</annotation></semantics></math>
+norm.</p><p>However, we can find subspace of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mover><mrow><mi>𝒫</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>K</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><mo accent="true">¯</mo></mover><annotation encoding="application/x-tex">\overline{\mathcal{P}(K)}</annotation></semantics></math>.
+For example, we may define weighted Hardy space on subspace of the
+formal series, which is even Hilbert spaces.</p><p>Actually, there is a theorem to provide a necessary and sufficient
+condition for a topological vector space to be normable.</p><div class=theorem><p><strong>Theorem 6</strong> (Kolmogorov’s normability criterion).
+<em>A topological vector space is normable if and only if it is a
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>T</mi><mn>1</mn></msub><annotation encoding="application/x-tex">T_1</annotation></semantics></math>
+space and admits a bounded convex neighborhood of the origin.</em></p></div><p>Considering that the formal power series lacks topological
+properties, it may be normable under some constructed topologies.</p><h2 id=sec:orgb2f1f7e>Acknowledgements</h2><p>The topic originates from a short conversation among me, my classmate
+Yue Wu, and Prof. Yi, which concenterated on the question whether a
+continuous function can be approximated with a series of rational
+polynomials. Further, the question is rewritten in a more precise form,
+“is rational polynomial space dense in
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝒞</mi><mrow><mo stretchy="true" form="prefix">[</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="true" form="postfix">]</mo></mrow></mrow><annotation encoding="application/x-tex">\mathcal{C}[a,b]</annotation></semantics></math>
+or some sort of other normed space?” Surely the question needs more
+conditions on the rational polynomial space, for example, the rational
+polynomial space needs some sort of norms.</p><p>Furthermore, I come about some thought on the problem in the opposite
+direction that, as polynomial space
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mrow><mo stretchy="true" form="prefix">[</mo><mi>x</mi><mo stretchy="true" form="postfix">]</mo></mrow></mrow><annotation encoding="application/x-tex">P[x]</annotation></semantics></math>
+can be completed into formal power series space
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mo stretchy="false" form="prefix">⟦</mo><mi>x</mi><mo stretchy="false" form="postfix">⟧</mo></mrow><annotation encoding="application/x-tex">P\lBrack x \rBrack</annotation></semantics></math>,
+can the
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mo stretchy="false" form="prefix">⟦</mo><mi>x</mi><mo stretchy="false" form="postfix">⟧</mo></mrow><annotation encoding="application/x-tex">P\lBrack x\rBrack</annotation></semantics></math>
+be normable? Surely according to Stone-Weierstrass Theorem, we get that
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝒞</mi><mrow><mo stretchy="true" form="prefix">[</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="true" form="postfix">]</mo></mrow><mo>⊂</mo><mi>P</mi><mo stretchy="false" form="prefix">⟦</mo><mi>x</mi><mo stretchy="false" form="postfix">⟧</mo></mrow><annotation encoding="application/x-tex">\mathcal C[a,b]\subset P\lBrack x\rBrack</annotation></semantics></math>.
+However, for the cause of unconvergence for some element of the space
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mo stretchy="false" form="prefix">⟦</mo><mi>x</mi><mo stretchy="false" form="postfix">⟧</mo></mrow><annotation encoding="application/x-tex">P\lBrack x\rBrack</annotation></semantics></math>,
+for example,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mo>∑</mo><mrow><mi>n</mi><mo>=</mo><mn>1</mn></mrow><mi>∞</mi></msubsup><msup><mi>x</mi><mi>n</mi></msup></mrow><annotation encoding="application/x-tex">\sum_{n=1}^{\infty}x^{n}</annotation></semantics></math>,
+we cannot use that norm. Then under some investigation and organization,
+The article is done.</p><p>Huge thanks to xxx, and Prof. yyy!</p><div id=refs class="references csl-bib-body" data-entry-spacing=0 role=list><div id=ref-lnl2013 class=csl-entry role=listitem><div class=csl-left-margin>1.</div><div class=csl-right-inline>CIARLET, P.G. <em>Linear and Nonlinear
+Functional Analysis with Applications: With 401 Problems and 52
+Figures</em>; Society for Industrial; Applied Mathematics, 2013; ISBN
+9781611972580.</div></div><div id=ref-fa1998 class=csl-entry role=listitem><div class=csl-left-margin>2.</div><div class=csl-right-inline>刘炳初 <em>泛函分析</em>; 南开大学数学教学丛书;
+科学出版社, 1998; ISBN 9787030064851.</div></div></div></main><footer><p>Copyright 2024. Proudly powered by Hugo & Pandoc & TeXLive & Emacs. I suggest you use Firefox for better experience.</p></footer></body></html>
