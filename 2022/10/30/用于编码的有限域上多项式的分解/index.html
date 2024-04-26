@@ -1,30 +1,173 @@
-<!doctype html><html lang=en-us dir=ltr><head><meta charset=utf-8><meta name=viewport content="width=device-width"><title>用于编码的有限域上多项式的分解 | Sinofine Lotusie</title>
-<link rel=icon href=/favicon.png><link rel=stylesheet href=/css/main.min.9f778239ff6de9665ef1f8c653d38822248a782e01996b1d23ec096e9483dd30.css integrity="sha256-n3eCOf9t6WZe8fjGU9OIIiSKeC4BmWsdI+wJbpSD3TA=" crossorigin=anonymous></head><body><header><h1>Sinofine Lotusie</h1><nav><ul><li><a href=/>Home</a></li><li><a aria-current=true class=ancestor href=/posts/>Posts</a></li><li><a href=/tags/>Tags</a></li><li><a href=/about/>About</a></li><li><a href=/friends/>Friends</a></li></ul></nav></header><main><h1 class=title-head>用于编码的有限域上多项式的分解</h1><time datetime=2022-10-30T20:09:25+00:00>October 30, 2022</time><h3 id=对-xn-1-的多项式分解的一些技巧.>对
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>x</mi><mi>n</mi></msup><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">x^n-1 </annotation></semantics></math>的多项式分解的一些技巧.</h3><div class=sourceCode id=cb1><pre class="sourceCode python"><code class="sourceCode python"><span id=cb1-1><a href=#cb1-1 aria-hidden=true tabindex=-1></a><span class=im>from</span> sympy <span class=im>import</span> GF,symbols,factor,latex</span>
-<span id=cb1-2><a href=#cb1-2 aria-hidden=true tabindex=-1></a>x<span class=op>=</span>symbols(<span class=st>&#39;x&#39;</span>)</span>
-<span id=cb1-3><a href=#cb1-3 aria-hidden=true tabindex=-1></a>F <span class=op>=</span> GF(<span class=dv>2</span>)</span>
-<span id=cb1-4><a href=#cb1-4 aria-hidden=true tabindex=-1></a>l <span class=op>=</span> [[<span class=st>&#39;i&#39;</span>,<span class=vs>r&#39;\(x^i-1\)&#39;</span>],<span class=va>None</span>]</span>
-<span id=cb1-5><a href=#cb1-5 aria-hidden=true tabindex=-1></a><span class=cf>for</span> i <span class=kw>in</span> <span class=bu>range</span>(<span class=dv>16</span>):</span>
-<span id=cb1-6><a href=#cb1-6 aria-hidden=true tabindex=-1></a>    l.append([i,<span class=vs>r&quot;\(&quot;</span><span class=op>+</span>latex(factor(x<span class=op>**</span>i<span class=op>-</span><span class=dv>1</span>,domain<span class=op>=</span>F))<span class=op>+</span><span class=st>&quot;\)&quot;</span>])</span>
-<span id=cb1-7><a href=#cb1-7 aria-hidden=true tabindex=-1></a><span class=cf>return</span> l</span></code></pre></div><div class=table-container><table><thead><tr class=header><th>i</th><th><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>x</mi><mi>i</mi></msup><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">x^i-1</annotation></semantics></math></th></tr></thead><tbody><tr class=odd><td>0</td><td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>0</mn><annotation encoding="application/x-tex">0</annotation></semantics></math></td></tr><tr class=even><td>1</td><td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">x + 1</annotation></semantics></math></td></tr><tr class=odd><td>2</td><td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo>+</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mn>2</mn></msup><annotation encoding="application/x-tex">\left(x + 1\right)^{2}</annotation></semantics></math></td></tr><tr class=even><td>3</td><td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo>+</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mo stretchy="true" form="prefix">(</mo><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mi>x</mi><mo>+</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\left(x + 1\right) \left(x^{2} + x + 1\right)</annotation></semantics></math></td></tr><tr class=odd><td>4</td><td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo>+</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mn>4</mn></msup><annotation encoding="application/x-tex">\left(x + 1\right)^{4}</annotation></semantics></math></td></tr><tr class=even><td>5</td><td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo>+</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mo stretchy="true" form="prefix">(</mo><msup><mi>x</mi><mn>4</mn></msup><mo>+</mo><msup><mi>x</mi><mn>3</mn></msup><mo>+</mo><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mi>x</mi><mo>+</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\left(x + 1\right) \left(x^{4} + x^{3} + x^{2} + x + 1\right)</annotation></semantics></math></td></tr><tr class=odd><td>6</td><td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo>+</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mn>2</mn></msup><msup><mrow><mo stretchy="true" form="prefix">(</mo><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mi>x</mi><mo>+</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">\left(x + 1\right)^{2} \left(x^{2} + x + 1\right)^{2}</annotation></semantics></math></td></tr><tr class=even><td>7</td><td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo>+</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mo stretchy="true" form="prefix">(</mo><msup><mi>x</mi><mn>3</mn></msup><mo>+</mo><mi>x</mi><mo>+</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mo stretchy="true" form="prefix">(</mo><msup><mi>x</mi><mn>3</mn></msup><mo>+</mo><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\left(x + 1\right) \left(x^{3} + x + 1\right) \left(x^{3} + x^{2} + 1\right)</annotation></semantics></math></td></tr><tr class=odd><td>8</td><td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo>+</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mn>8</mn></msup><annotation encoding="application/x-tex">\left(x + 1\right)^{8}</annotation></semantics></math></td></tr><tr class=even><td>9</td><td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo>+</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mo stretchy="true" form="prefix">(</mo><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mi>x</mi><mo>+</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mo stretchy="true" form="prefix">(</mo><msup><mi>x</mi><mn>6</mn></msup><mo>+</mo><msup><mi>x</mi><mn>3</mn></msup><mo>+</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\left(x + 1\right) \left(x^{2} + x + 1\right) \left(x^{6} + x^{3} + 1\right)</annotation></semantics></math></td></tr><tr class=odd><td>10</td><td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo>+</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mn>2</mn></msup><msup><mrow><mo stretchy="true" form="prefix">(</mo><msup><mi>x</mi><mn>4</mn></msup><mo>+</mo><msup><mi>x</mi><mn>3</mn></msup><mo>+</mo><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mi>x</mi><mo>+</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">\left(x + 1\right)^{2} \left(x^{4} + x^{3} + x^{2} + x + 1\right)^{2}</annotation></semantics></math></td></tr><tr class=even><td>11</td><td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo>+</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mo stretchy="true" form="prefix">(</mo><msup><mi>x</mi><mn>10</mn></msup><mo>+</mo><msup><mi>x</mi><mn>9</mn></msup><mo>+</mo><msup><mi>x</mi><mn>8</mn></msup><mo>+</mo><msup><mi>x</mi><mn>7</mn></msup><mo>+</mo><msup><mi>x</mi><mn>6</mn></msup><mo>+</mo><msup><mi>x</mi><mn>5</mn></msup><mo>+</mo><msup><mi>x</mi><mn>4</mn></msup><mo>+</mo><msup><mi>x</mi><mn>3</mn></msup><mo>+</mo><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mi>x</mi><mo>+</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\left(x + 1\right) \left(x^{10} + x^{9} + x^{8} + x^{7} + x^{6} + x^{5} + x^{4} + x^{3} + x^{2} + x + 1\right)</annotation></semantics></math></td></tr><tr class=odd><td>12</td><td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo>+</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mn>4</mn></msup><msup><mrow><mo stretchy="true" form="prefix">(</mo><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mi>x</mi><mo>+</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mn>4</mn></msup></mrow><annotation encoding="application/x-tex">\left(x + 1\right)^{4} \left(x^{2} + x + 1\right)^{4}</annotation></semantics></math></td></tr><tr class=even><td>13</td><td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo>+</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mo stretchy="true" form="prefix">(</mo><msup><mi>x</mi><mn>12</mn></msup><mo>+</mo><msup><mi>x</mi><mn>11</mn></msup><mo>+</mo><msup><mi>x</mi><mn>10</mn></msup><mo>+</mo><msup><mi>x</mi><mn>9</mn></msup><mo>+</mo><msup><mi>x</mi><mn>8</mn></msup><mo>+</mo><msup><mi>x</mi><mn>7</mn></msup><mo>+</mo><msup><mi>x</mi><mn>6</mn></msup><mo>+</mo><msup><mi>x</mi><mn>5</mn></msup><mo>+</mo><msup><mi>x</mi><mn>4</mn></msup><mo>+</mo><msup><mi>x</mi><mn>3</mn></msup><mo>+</mo><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mi>x</mi><mo>+</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\left(x + 1\right) \left(x^{12} + x^{11} + x^{10} + x^{9} + x^{8} + x^{7} + x^{6} + x^{5} + x^{4} + x^{3} + x^{2} + x + 1\right)</annotation></semantics></math></td></tr><tr class=odd><td>14</td><td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo>+</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mn>2</mn></msup><msup><mrow><mo stretchy="true" form="prefix">(</mo><msup><mi>x</mi><mn>3</mn></msup><mo>+</mo><mi>x</mi><mo>+</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mn>2</mn></msup><msup><mrow><mo stretchy="true" form="prefix">(</mo><msup><mi>x</mi><mn>3</mn></msup><mo>+</mo><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">\left(x + 1\right)^{2} \left(x^{3} + x + 1\right)^{2} \left(x^{3} + x^{2} + 1\right)^{2}</annotation></semantics></math></td></tr><tr class=even><td>15</td><td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo>+</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mo stretchy="true" form="prefix">(</mo><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mi>x</mi><mo>+</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mo stretchy="true" form="prefix">(</mo><msup><mi>x</mi><mn>4</mn></msup><mo>+</mo><mi>x</mi><mo>+</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mo stretchy="true" form="prefix">(</mo><msup><mi>x</mi><mn>4</mn></msup><mo>+</mo><msup><mi>x</mi><mn>3</mn></msup><mo>+</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mo stretchy="true" form="prefix">(</mo><msup><mi>x</mi><mn>4</mn></msup><mo>+</mo><msup><mi>x</mi><mn>3</mn></msup><mo>+</mo><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mi>x</mi><mo>+</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\left(x + 1\right) \left(x^{2} + x + 1\right) \left(x^{4} + x + 1\right) \left(x^{4} + x^{3} + 1\right) \left(x^{4} + x^{3} + x^{2} + x + 1\right)</annotation></semantics></math></td></tr></tbody></table></div><p>方法如下:</p><ol><li><p>首先考虑
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>用于编码的有限域上多项式的分解 | Sinofine Lotusie</title>
+<link rel="icon" href="/favicon.png">
+
+      <link rel="stylesheet" href="/css/main.min.70f0a5cf4dc3661c2dfced298329d4e44b9b677806cdf0c905b442699ea62217.css" integrity="sha256-cPClz03DZhwt/O0pgynU5EubZ3gGzfDJBbRCaZ6mIhc=" crossorigin="anonymous">
+
+
+  
+  
+  
+  
+
+
+</head>
+<body>
+  <header>
+    <h1>Sinofine Lotusie</h1>
+
+  <nav>
+    <ul>
+    <li>
+      <a href="/">Home</a>
+    </li>
+    <li>
+      <a aria-current="true" class="ancestor" href="/posts/">Posts</a>
+    </li>
+    <li>
+      <a href="/tags/">Tags</a>
+    </li>
+    <li>
+      <a href="/about/">About</a>
+    </li>
+    <li>
+      <a href="/friends/">Friends</a>
+    </li>
+    </ul>
+  </nav>
+
+
+  </header>
+  <main>
+    
+  <h1 class="title-head">用于编码的有限域上多项式的分解</h1>
+
+  
+  
+  <time datetime="2022-10-30T20:09:25&#43;00:00">October 30, 2022</time>
+
+  <h3 id="对-xn-1-的多项式分解的一些技巧.">对
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>x</mi><mi>n</mi></msup><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">x^n-1 </annotation></semantics></math>的多项式分解的一些技巧.</h3>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sympy <span class="im">import</span> GF,symbols,factor,latex</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>x<span class="op">=</span>symbols(<span class="st">&#39;x&#39;</span>)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>F <span class="op">=</span> GF(<span class="dv">2</span>)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>l <span class="op">=</span> [[<span class="st">&#39;i&#39;</span>,<span class="vs">r&#39;\(x^i-1\)&#39;</span>],<span class="va">None</span>]</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">16</span>):</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    l.append([i,<span class="vs">r&quot;\(&quot;</span><span class="op">+</span>latex(factor(x<span class="op">**</span>i<span class="op">-</span><span class="dv">1</span>,domain<span class="op">=</span>F))<span class="op">+</span><span class="st">&quot;\)&quot;</span>])</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="cf">return</span> l</span></code></pre></div>
+<div class="table-container">
+<table>
+<thead>
+<tr class="header">
+<th>i</th>
+<th><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>x</mi><mi>i</mi></msup><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">x^i-1</annotation></semantics></math></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0</td>
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>0</mn><annotation encoding="application/x-tex">0</annotation></semantics></math></td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">x + 1</annotation></semantics></math></td>
+</tr>
+<tr class="odd">
+<td>2</td>
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo>+</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mn>2</mn></msup><annotation encoding="application/x-tex">\left(x + 1\right)^{2}</annotation></semantics></math></td>
+</tr>
+<tr class="even">
+<td>3</td>
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo>+</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mo stretchy="true" form="prefix">(</mo><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mi>x</mi><mo>+</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\left(x + 1\right) \left(x^{2} + x + 1\right)</annotation></semantics></math></td>
+</tr>
+<tr class="odd">
+<td>4</td>
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo>+</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mn>4</mn></msup><annotation encoding="application/x-tex">\left(x + 1\right)^{4}</annotation></semantics></math></td>
+</tr>
+<tr class="even">
+<td>5</td>
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo>+</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mo stretchy="true" form="prefix">(</mo><msup><mi>x</mi><mn>4</mn></msup><mo>+</mo><msup><mi>x</mi><mn>3</mn></msup><mo>+</mo><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mi>x</mi><mo>+</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\left(x + 1\right) \left(x^{4} + x^{3} + x^{2} + x + 1\right)</annotation></semantics></math></td>
+</tr>
+<tr class="odd">
+<td>6</td>
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo>+</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mn>2</mn></msup><msup><mrow><mo stretchy="true" form="prefix">(</mo><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mi>x</mi><mo>+</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">\left(x + 1\right)^{2} \left(x^{2} + x + 1\right)^{2}</annotation></semantics></math></td>
+</tr>
+<tr class="even">
+<td>7</td>
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo>+</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mo stretchy="true" form="prefix">(</mo><msup><mi>x</mi><mn>3</mn></msup><mo>+</mo><mi>x</mi><mo>+</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mo stretchy="true" form="prefix">(</mo><msup><mi>x</mi><mn>3</mn></msup><mo>+</mo><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\left(x + 1\right) \left(x^{3} + x + 1\right) \left(x^{3} + x^{2} + 1\right)</annotation></semantics></math></td>
+</tr>
+<tr class="odd">
+<td>8</td>
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo>+</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mn>8</mn></msup><annotation encoding="application/x-tex">\left(x + 1\right)^{8}</annotation></semantics></math></td>
+</tr>
+<tr class="even">
+<td>9</td>
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo>+</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mo stretchy="true" form="prefix">(</mo><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mi>x</mi><mo>+</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mo stretchy="true" form="prefix">(</mo><msup><mi>x</mi><mn>6</mn></msup><mo>+</mo><msup><mi>x</mi><mn>3</mn></msup><mo>+</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\left(x + 1\right) \left(x^{2} + x + 1\right) \left(x^{6} + x^{3} + 1\right)</annotation></semantics></math></td>
+</tr>
+<tr class="odd">
+<td>10</td>
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo>+</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mn>2</mn></msup><msup><mrow><mo stretchy="true" form="prefix">(</mo><msup><mi>x</mi><mn>4</mn></msup><mo>+</mo><msup><mi>x</mi><mn>3</mn></msup><mo>+</mo><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mi>x</mi><mo>+</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">\left(x + 1\right)^{2} \left(x^{4} + x^{3} + x^{2} + x + 1\right)^{2}</annotation></semantics></math></td>
+</tr>
+<tr class="even">
+<td>11</td>
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo>+</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mo stretchy="true" form="prefix">(</mo><msup><mi>x</mi><mn>10</mn></msup><mo>+</mo><msup><mi>x</mi><mn>9</mn></msup><mo>+</mo><msup><mi>x</mi><mn>8</mn></msup><mo>+</mo><msup><mi>x</mi><mn>7</mn></msup><mo>+</mo><msup><mi>x</mi><mn>6</mn></msup><mo>+</mo><msup><mi>x</mi><mn>5</mn></msup><mo>+</mo><msup><mi>x</mi><mn>4</mn></msup><mo>+</mo><msup><mi>x</mi><mn>3</mn></msup><mo>+</mo><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mi>x</mi><mo>+</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\left(x + 1\right) \left(x^{10} + x^{9} + x^{8} + x^{7} + x^{6} + x^{5} + x^{4} + x^{3} + x^{2} + x + 1\right)</annotation></semantics></math></td>
+</tr>
+<tr class="odd">
+<td>12</td>
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo>+</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mn>4</mn></msup><msup><mrow><mo stretchy="true" form="prefix">(</mo><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mi>x</mi><mo>+</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mn>4</mn></msup></mrow><annotation encoding="application/x-tex">\left(x + 1\right)^{4} \left(x^{2} + x + 1\right)^{4}</annotation></semantics></math></td>
+</tr>
+<tr class="even">
+<td>13</td>
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo>+</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mo stretchy="true" form="prefix">(</mo><msup><mi>x</mi><mn>12</mn></msup><mo>+</mo><msup><mi>x</mi><mn>11</mn></msup><mo>+</mo><msup><mi>x</mi><mn>10</mn></msup><mo>+</mo><msup><mi>x</mi><mn>9</mn></msup><mo>+</mo><msup><mi>x</mi><mn>8</mn></msup><mo>+</mo><msup><mi>x</mi><mn>7</mn></msup><mo>+</mo><msup><mi>x</mi><mn>6</mn></msup><mo>+</mo><msup><mi>x</mi><mn>5</mn></msup><mo>+</mo><msup><mi>x</mi><mn>4</mn></msup><mo>+</mo><msup><mi>x</mi><mn>3</mn></msup><mo>+</mo><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mi>x</mi><mo>+</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\left(x + 1\right) \left(x^{12} + x^{11} + x^{10} + x^{9} + x^{8} + x^{7} + x^{6} + x^{5} + x^{4} + x^{3} + x^{2} + x + 1\right)</annotation></semantics></math></td>
+</tr>
+<tr class="odd">
+<td>14</td>
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo>+</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mn>2</mn></msup><msup><mrow><mo stretchy="true" form="prefix">(</mo><msup><mi>x</mi><mn>3</mn></msup><mo>+</mo><mi>x</mi><mo>+</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mn>2</mn></msup><msup><mrow><mo stretchy="true" form="prefix">(</mo><msup><mi>x</mi><mn>3</mn></msup><mo>+</mo><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">\left(x + 1\right)^{2} \left(x^{3} + x + 1\right)^{2} \left(x^{3} + x^{2} + 1\right)^{2}</annotation></semantics></math></td>
+</tr>
+<tr class="even">
+<td>15</td>
+<td><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo>+</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mo stretchy="true" form="prefix">(</mo><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mi>x</mi><mo>+</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mo stretchy="true" form="prefix">(</mo><msup><mi>x</mi><mn>4</mn></msup><mo>+</mo><mi>x</mi><mo>+</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mo stretchy="true" form="prefix">(</mo><msup><mi>x</mi><mn>4</mn></msup><mo>+</mo><msup><mi>x</mi><mn>3</mn></msup><mo>+</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mo stretchy="true" form="prefix">(</mo><msup><mi>x</mi><mn>4</mn></msup><mo>+</mo><msup><mi>x</mi><mn>3</mn></msup><mo>+</mo><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mi>x</mi><mo>+</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\left(x + 1\right) \left(x^{2} + x + 1\right) \left(x^{4} + x + 1\right) \left(x^{4} + x^{3} + 1\right) \left(x^{4} + x^{3} + x^{2} + x + 1\right)</annotation></semantics></math></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>方法如下:</p>
+<ol>
+<li><p>首先考虑
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n </annotation></semantics></math>是否含有有限域特征的幂,
 若
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>=</mo><mi>m</mi><msup><mi>q</mi><mi>k</mi></msup></mrow><annotation encoding="application/x-tex">n=mq^k </annotation></semantics></math>,
 则将其首先分解为
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>x</mi><mi>n</mi></msup><mo>−</mo><mn>1</mn><mo>=</mo><msup><mrow><mo stretchy="true" form="prefix">(</mo><msup><mi>x</mi><mi>m</mi></msup><mo>−</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><msup><mi>q</mi><mi>k</mi></msup></msup></mrow><annotation encoding="application/x-tex">x^n-1=(x^m-1)^{q^{k}} </annotation></semantics></math>;</p></li><li><p>其次考虑
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>x</mi><mi>n</mi></msup><mo>−</mo><mn>1</mn><mo>=</mo><msup><mrow><mo stretchy="true" form="prefix">(</mo><msup><mi>x</mi><mi>m</mi></msup><mo>−</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><msup><mi>q</mi><mi>k</mi></msup></msup></mrow><annotation encoding="application/x-tex">x^n-1=(x^m-1)^{q^{k}} </annotation></semantics></math>;</p></li>
+<li><p>其次考虑
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">m+1 </annotation></semantics></math>是否是有限域特征的幂,
-考虑如下定理,</p></li></ol><p><span id=uniqfact></span>设
+考虑如下定理,</p></li>
+</ol>
+<p><span id="uniqfact"></span>设
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>q</mi><annotation encoding="application/x-tex">q </annotation></semantics></math>
 是有限域
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>F</mi><mi>q</mi></msub><annotation encoding="application/x-tex">F_q </annotation></semantics></math>的特征,
 则有限域上的多项式
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>x</mi><msup><mi>q</mi><mi>n</mi></msup></msup><mo>−</mo><mi>x</mi></mrow><annotation encoding="application/x-tex">x^{q^n}-x </annotation></semantics></math>有分解<div class=displaymath-container><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>x</mi><msup><mi>q</mi><mi>n</mi></msup></msup><mo>−</mo><mi>x</mi><mo>=</mo><munder><mo>∏</mo><mrow><mi>d</mi><mo stretchy="false" form="prefix">|</mo><mi>n</mi></mrow></munder><msub><mi>ϕ</mi><mi>d</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>,</mo></mrow><annotation encoding="application/x-tex"> x^{q^n}-x=\prod_{d|n}\phi_d(x), </annotation></semantics></math></div>其中
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>x</mi><msup><mi>q</mi><mi>n</mi></msup></msup><mo>−</mo><mi>x</mi></mrow><annotation encoding="application/x-tex">x^{q^n}-x </annotation></semantics></math>有分解
+<div class="displaymath-container"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>x</mi><msup><mi>q</mi><mi>n</mi></msup></msup><mo>−</mo><mi>x</mi><mo>=</mo><munder><mo>∏</mo><mrow><mi>d</mi><mo stretchy="false" form="prefix">|</mo><mi>n</mi></mrow></munder><msub><mi>ϕ</mi><mi>d</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>,</mo></mrow><annotation encoding="application/x-tex"> x^{q^n}-x=\prod_{d|n}\phi_d(x), </annotation></semantics></math></div>
+其中
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>ϕ</mi><mi>d</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\phi_d(x) </annotation></semantics></math>是阶为
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>d</mi><annotation encoding="application/x-tex">d </annotation></semantics></math>的首一不可约多项式乘积.</p><p>故可分解. 如</p><div class=displaymath-container><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mtable><mtr><mtd columnalign="right" style="text-align: right"><msup><mi>x</mi><mn>15</mn></msup><mo>−</mo><mn>1</mn></mtd><mtd columnalign="left" style="text-align: left"><mo>=</mo><mfrac><mn>1</mn><mi>x</mi></mfrac><mrow><mo stretchy="true" form="prefix">(</mo><msup><mi>x</mi><mn>16</mn></msup><mo>−</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right"></mtd><mtd columnalign="left" style="text-align: left"><mo>=</mo><mfrac><mn>1</mn><mi>x</mi></mfrac><munder><mo>∏</mo><mrow><mi>d</mi><mo>=</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>4</mn></mrow></munder><msub><mi>ϕ</mi><mi>d</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right"></mtd><mtd columnalign="left" style="text-align: left"><mo>=</mo><mfrac><mn>1</mn><mi>x</mi></mfrac><mi>x</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo>+</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mo stretchy="true" form="prefix">(</mo><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mi>x</mi><mo>+</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mo stretchy="true" form="prefix">(</mo><msup><mi>x</mi><mn>4</mn></msup><mo>+</mo><msup><mi>x</mi><mn>3</mn></msup><mo>+</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mo stretchy="true" form="prefix">(</mo><msup><mi>x</mi><mn>4</mn></msup><mo>+</mo><mi>x</mi><mo>+</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mo stretchy="true" form="prefix">(</mo><msup><mi>x</mi><mn>4</mn></msup><mo>+</mo><msup><mi>x</mi><mn>3</mn></msup><mo>+</mo><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mi>x</mi><mo>+</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right"></mtd><mtd columnalign="left" style="text-align: left"><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo>+</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mo stretchy="true" form="prefix">(</mo><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mi>x</mi><mo>+</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mo stretchy="true" form="prefix">(</mo><msup><mi>x</mi><mn>4</mn></msup><mo>+</mo><msup><mi>x</mi><mn>3</mn></msup><mo>+</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mo stretchy="true" form="prefix">(</mo><msup><mi>x</mi><mn>4</mn></msup><mo>+</mo><mi>x</mi><mo>+</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mo stretchy="true" form="prefix">(</mo><msup><mi>x</mi><mn>4</mn></msup><mo>+</mo><msup><mi>x</mi><mn>3</mn></msup><mo>+</mo><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mi>x</mi><mo>+</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow></mtd></mtr></mtable><annotation encoding="application/x-tex">\begin{align*} x^{15}-1&amp;=\frac{1}{x}(x^{16}-x)\\
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>d</mi><annotation encoding="application/x-tex">d </annotation></semantics></math>的首一不可约多项式乘积.</p>
+<p>故可分解. 如</p>
+<div class="displaymath-container">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mtable><mtr><mtd columnalign="right" style="text-align: right"><msup><mi>x</mi><mn>15</mn></msup><mo>−</mo><mn>1</mn></mtd><mtd columnalign="left" style="text-align: left"><mo>=</mo><mfrac><mn>1</mn><mi>x</mi></mfrac><mrow><mo stretchy="true" form="prefix">(</mo><msup><mi>x</mi><mn>16</mn></msup><mo>−</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right"></mtd><mtd columnalign="left" style="text-align: left"><mo>=</mo><mfrac><mn>1</mn><mi>x</mi></mfrac><munder><mo>∏</mo><mrow><mi>d</mi><mo>=</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>4</mn></mrow></munder><msub><mi>ϕ</mi><mi>d</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right"></mtd><mtd columnalign="left" style="text-align: left"><mo>=</mo><mfrac><mn>1</mn><mi>x</mi></mfrac><mi>x</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo>+</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mo stretchy="true" form="prefix">(</mo><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mi>x</mi><mo>+</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mo stretchy="true" form="prefix">(</mo><msup><mi>x</mi><mn>4</mn></msup><mo>+</mo><msup><mi>x</mi><mn>3</mn></msup><mo>+</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mo stretchy="true" form="prefix">(</mo><msup><mi>x</mi><mn>4</mn></msup><mo>+</mo><mi>x</mi><mo>+</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mo stretchy="true" form="prefix">(</mo><msup><mi>x</mi><mn>4</mn></msup><mo>+</mo><msup><mi>x</mi><mn>3</mn></msup><mo>+</mo><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mi>x</mi><mo>+</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right"></mtd><mtd columnalign="left" style="text-align: left"><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo>+</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mo stretchy="true" form="prefix">(</mo><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mi>x</mi><mo>+</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mo stretchy="true" form="prefix">(</mo><msup><mi>x</mi><mn>4</mn></msup><mo>+</mo><msup><mi>x</mi><mn>3</mn></msup><mo>+</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mo stretchy="true" form="prefix">(</mo><msup><mi>x</mi><mn>4</mn></msup><mo>+</mo><mi>x</mi><mo>+</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mo stretchy="true" form="prefix">(</mo><msup><mi>x</mi><mn>4</mn></msup><mo>+</mo><msup><mi>x</mi><mn>3</mn></msup><mo>+</mo><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mi>x</mi><mo>+</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow></mtd></mtr></mtable><annotation encoding="application/x-tex">\begin{align*} x^{15}-1&amp;=\frac{1}{x}(x^{16}-x)\\
 &amp;=\frac{1}{x}\prod_{d=1,2,4}\phi_d(x)\\
 &amp;=\frac{1}{x}x(x+1)(x^2+x+1)(x^4+x^3+1)(x^4+x+1)(x^4+x^3+x^2+x+1)\\
 &amp;=(x+1)(x^2+x+1)(x^4+x^3+1)(x^4+x+1)(x^4+x^3+x^2+x+1) \end{align*}
-</annotation></semantics></math></div><h3 id=有限域上的极小多项式>有限域上的极小多项式</h3><p>考虑有限域
+</annotation></semantics></math>
+</div>
+<h3 id="有限域上的极小多项式">有限域上的极小多项式</h3>
+<p>考虑有限域
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>F</mi><mo>=</mo><msub><mi>F</mi><msup><mi>p</mi><mi>n</mi></msup></msub></mrow><annotation encoding="application/x-tex">F=F_{p^n} </annotation></semantics></math>,设
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>α</mi><annotation encoding="application/x-tex">\alpha </annotation></semantics></math>是
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>F</mi><annotation encoding="application/x-tex">F </annotation></semantics></math>的生成元(举例,
@@ -36,9 +179,23 @@
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>G</mi><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><msup><mi>α</mi><mi>p</mi></msup><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mspace width="0.222em"></mspace><mo stretchy="false" form="prefix">(</mo><mo>mod</mo><mspace width="0.222em"></mspace><mrow><msup><mi>p</mi><mi>n</mi></msup><mo>−</mo><mn>1</mn></mrow><mo stretchy="false" form="postfix">)</mo></mrow><mo>⊂</mo><mi>F</mi></mrow><annotation encoding="application/x-tex">G=(\alpha^p) \pmod{p^n-1}\subset F </annotation></semantics></math>,
 可以得到轨道
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mi>G</mi><mo>,</mo><mi>a</mi><mo>∈</mo><mi>F</mi></mrow><annotation encoding="application/x-tex">aG, a\in F </annotation></semantics></math>.
-可以证明以下结论:</p><p>以某轨道的所有元素为唯一单根的多项式是
+可以证明以下结论:</p>
+<p>以某轨道的所有元素为唯一单根的多项式是
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>F</mi><mi>p</mi></msub><annotation encoding="application/x-tex">F_p
-</annotation></semantics></math>上的极小多项式.</p><p>该轨道也称 Cyclotomic Coset, 至于为什么叫 coset 我不大能理解.</p><p>我们发现由orbitmini,
+</annotation></semantics></math>上的极小多项式.</p>
+<p>该轨道也称 Cyclotomic Coset, 至于为什么叫 coset 我不大能理解.</p>
+<p>我们发现由orbitmini,
 轨道正好(同构意义下)把域的元素划分为了不同等价类,
 并且每个等价类都对应某个不可约多项式,
-将这些不可约多项式乘起来即印证(不是证明)了uniqfact 中的分裂域描述.</p></main><footer><p>Copyright 2024. Proudly powered by Hugo & Pandoc & TeXLive & Emacs. I suggest you use Firefox for better experience.</p></footer></body></html>
+将这些不可约多项式乘起来即印证(不是证明)了uniqfact 中的分裂域描述.</p>
+
+  
+
+
+  </main>
+  <footer>
+    <p>Copyright 2024. Proudly powered by Hugo & Pandoc & TeXLive & Emacs. I suggest you use Firefox for better experience.</p>
+
+  </footer>
+</body>
+</html>
