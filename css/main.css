@@ -51,6 +51,21 @@ main{
         display: block;
         text-align: center;
     }
+    p > .post-date {
+	display: inline-flex;
+	font-size: small;
+	width: 7em;
+	padding: 0 .2em;
+    }
+    .post-date::before {
+	content: "[";
+	flex: 1;
+    }
+    .post-date::after {
+	content: "]";
+	flex: 1;
+	text-align-last: right;
+    }
 }
 footer {
     /* border-top: 1px solid #222; */
