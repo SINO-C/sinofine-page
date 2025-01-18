@@ -47,6 +47,12 @@ header {
     margin-bottom: 1rem;
 }
 main{
+    text-align: justify;
+    text-wrap: pretty;
+    word-break: auto-phrase;
+    p {
+	text-align-last: left;
+    }
     .title-head, time {
         display: block;
         text-align: center;
@@ -75,12 +81,6 @@ footer {
 a {
     color: #555;
     text-decoration: none;
-}
-
-main {
-    text-align: justify;
-    p {text-align-last: left;}
-    /* flex: 1; */
 }
 
 math {
