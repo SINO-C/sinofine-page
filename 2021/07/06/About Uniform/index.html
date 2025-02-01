@@ -48,8 +48,15 @@
 learnt since. And I wanna summarize them.</p>
 <h2 id="about-uniform-continuity">About uniform continuity</h2>
 <p>In calculus, there exists a concept called <em>Continuity</em> as
-expressed below:
-<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mtable><mtr><mtd columnalign="right" style="text-align: right"></mtd><mtd columnalign="left" style="text-align: left"><mrow><mrow><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> is continuous at </mtext><mspace width="0.333em"></mspace></mrow><msub><mi>x</mi><mn>0</mn></msub></mrow><mo>⇔</mo></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right"></mtd><mtd columnalign="left" style="text-align: left"><mo>∀</mo><mrow><mi>ϵ</mi><mo>∈</mo><mi>ℝ</mi></mrow><mo>∃</mo><mrow><mi>δ</mi><mo>∈</mo><mi>ℝ</mi></mrow><mo>:</mo><mrow><mo stretchy="true" form="prefix">|</mo><mi>x</mi><mo>−</mo><msub><mi>x</mi><mn>0</mn></msub><mo stretchy="true" form="postfix">|</mo></mrow><mo>&lt;</mo><mi>δ</mi><mo>⇒</mo><mrow><mo stretchy="true" form="prefix">|</mo><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>−</mo><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>x</mi><mn>0</mn></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo stretchy="true" form="postfix">|</mo></mrow><mo>&lt;</mo><mi>ϵ</mi></mtd></mtr></mtable><annotation encoding="application/x-tex">\begin{aligned}&amp;\text{$f(x)$ is continuous at $x_0$}\Leftrightarrow\\ &amp;\forall{\epsilon\in \mathbb R}\exists{\delta\in \mathbb R} : |x-x_0|&lt;\delta \Rightarrow |f(x)-f(x_0)|&lt;\epsilon\end{aligned} </annotation></semantics></math></p>
+expressed:
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex"> f(x) </annotation></semantics></math>
+is continuous at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mn>0</mn></msub><mo>⇔</mo></mrow><annotation encoding="application/x-tex"> x_0 \iff</annotation></semantics></math>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>∀</mo><mi>ε</mi><mo>∈</mo><mi>ℝ</mi><mo>∃</mo><mi>δ</mi><mo>∈</mo><mi>ℝ</mi><mtext mathvariant="normal">s.t.</mtext><mrow><mo stretchy="true" form="prefix">|</mo><mi>x</mi><mo>−</mo><msub><mi>x</mi><mn>0</mn></msub><mo stretchy="true" form="postfix">|</mo></mrow><mo>&lt;</mo><mi>δ</mi><mo>⟹</mo><mrow><mo stretchy="true" form="prefix">|</mo><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>−</mo><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>x</mi><mn>0</mn></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo stretchy="true" form="postfix">|</mo></mrow><mo>&lt;</mo><mi>ε</mi></mrow><annotation encoding="application/x-tex">
+\forall \varepsilon
+\in \mathbb{R}
+\exists \delta \in \mathbb{R} \text{s.t.} |x-x_{0}|&lt;\delta\implies |f(x)-f(x_{0})|&lt;\varepsilon
+</annotation></semantics></math></p>
 <p>As is seen above,
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>δ</mi><annotation encoding="application/x-tex">\delta</annotation></semantics></math>
 is somewhere dependent towards
@@ -58,12 +65,16 @@ What if we genernalize that idea such that
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>δ</mi><annotation encoding="application/x-tex">\delta</annotation></semantics></math>
 shall be dependent not to
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>x</mi><mn>0</mn></msub><annotation encoding="application/x-tex">x_0</annotation></semantics></math>
-but to an interval? Just modify the concept as below: <span
-class="math display">$$\begin{aligned}&amp;\text{$f(x)$ is
-\textbf{uniform} continuous at interval $\mathbf{I}$}\Leftrightarrow\\
-&amp;\forall{\epsilon\in\mathbb R}\exists{\delta\in\mathbb R,
-x_1,x_2\in\mathbf{I}}: |x_1-x_2|&lt;\delta \Rightarrow
-|f(x_1)-f(x_2)&lt;\epsilon|\end{aligned}$$</span></p>
+but to an interval? Just modify the concept as below:
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">f(x)</annotation></semantics></math>
+is <strong>uniform</strong> continuous at interval
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝐈</mi><mo>⇔</mo></mrow><annotation encoding="application/x-tex">\mathbf{I}\iff</annotation></semantics></math>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>∀</mo><mi>ε</mi><mo>∈</mo><mi>ℝ</mi><mo>∃</mo><mi>δ</mi><mo>∈</mo><mi>ℝ</mi><mo>,</mo><mo>∀</mo><msub><mi>x</mi><mn>1</mn></msub><mo>,</mo><msub><mi>x</mi><mn>2</mn></msub><mo>∈</mo><mi>𝐈</mi><mo>:</mo><mrow><mo stretchy="true" form="prefix">|</mo><msub><mi>x</mi><mn>1</mn></msub><mo>−</mo><msub><mi>x</mi><mn>2</mn></msub><mo stretchy="true" form="postfix">|</mo></mrow><mo>&lt;</mo><mi>δ</mi><mo>⟹</mo><mrow><mo stretchy="true" form="prefix">|</mo><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>x</mi><mn>1</mn></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo>−</mo><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>x</mi><mn>2</mn></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo>&lt;</mo><mi>ε</mi><mo stretchy="true" form="postfix">|</mo></mrow></mrow><annotation encoding="application/x-tex">
+\forall\varepsilon\in\mathbb{R}\exists
+\delta\in\mathbb{R},\forall
+x_1,x_2\in\mathbf{I} : |x_1-x_2|&lt;\delta
+\implies |f(x_1)-f(x_2)&lt;\varepsilon|
+</annotation></semantics></math></p>
 <p>And with <em>Lagrange's mean value theorem</em>, we can distinguish
 that in an open interval, if every point is derivable and its value is
 bounded
@@ -102,7 +113,7 @@ The same way the uniform continuity can be as:
 
   </main>
   <footer>
-    <p>Copyright 2025. Proudly powered by Hugo & Pandoc & TeXLive & Emacs. I suggest you use Firefox for better experience. The site is built on Sat,  1 Feb 2025, at 23:16:14 CST.</p>
+    <p>Copyright 2025. Proudly powered by Hugo & Pandoc & TeXLive & Emacs. I suggest you use Firefox for better experience. The site is built on Sat,  1 Feb 2025, at 23:26:07 CST.</p>
 
   </footer>
 </body>
