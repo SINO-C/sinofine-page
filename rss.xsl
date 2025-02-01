@@ -32,8 +32,6 @@
 				}
 				@media screen and (max-width: 820px){
 				body{
-				h1, h2, h3, h4, h5, h6 {
-				}
         margin: var(--body-margin) 2em;
         main {
         text-align: left;
@@ -65,10 +63,6 @@
 				p {
 				text-align-last: left;
 				}
-				.title-head, time {
-        display: block;
-        text-align: center;
-				}
 				p > .post-date {
 				display: inline-flex;
 				font-size: small;
@@ -85,111 +79,14 @@
 				text-align-last: right;
 				}
 				}
-				footer {
-				/* border-top: 1px solid #222; */
-				margin-top: 1rem;
-				}
 
 				a {
 				color: #555;
 				text-decoration: none;
 				}
 
-				math {
-				font-family: var(--math-fonts);
-				max-width: 100%;
-				overflow-x: auto;
-				overflow-y: hidden;
-				}
-				div.abstract {
-				margin: 2em 2em 2em 2em;
-				text-align: left;
-				font-size: 85%;
-				}
-				div.abstract-title {
-				font-weight: bold;
-				text-align: center;
-				padding: 0;
-				margin-bottom: 0.5em;
-				}
-				h1, h2, h3, h4, h5, h6 {
-				/* margin-top: 1.4em; */
+				h1 {
 				font-size: 1.5em;
-				&::before {
-        display: inline-block;
-        color: #aaa;
-        width: 3em;
-        margin-left: -3em;
-        text-align: end;
-				}
-				}
-				h5, h6 {
-				font-size: 1em;
-				font-style: italic;
-				}
-				h6 {
-				font-weight: normal;
-				}
-				h2::before {content:"* ";}
-				h3::before {content:"** ";}
-				h4::before {content:"*** ";}
-				h5::before {content:"**** ";}
-				h6::before {content:"***** ";}
-				.friends {
-				display: flex;
-				flex-wrap: wrap;
-				.friend-card {
-				width: calc(var(--page-width) / 2 - 2em);
-				margin: 1em;
-				display: inline-flex;
-				border-left: 0px #069dff solid;
-				transition: border 0.1s ease-in;
-				box-sizing: border-box;
-				img {
-	      height: fit-content;
-	      object-fit: cover;
-	      aspect-ratio: 1;
-				}	
-				.friend-info {
-	      padding-left: .5em;
-				height: 100px;
-	      h3{
-		    font-size: 1em;
-		    line-height: 1;
-		    &::before {content: none;}
-	      }
-				}
-				&:hover {
-	      border-left-width: 5px;
-				}
-				}
-				}
-				em {
-				font-family: var(--english-fonts), var(--italic-chinese-fonts), monospace;
-				font-synthesis: none;
-				}
-				.table-container, .displaymath-container, .sourceCode {
-				max-width: 100%;
-				overflow-x: auto;
-				overflow-y: hidden;
-				}
-				div.csl-entry {
-				clear: both;
-				}
-				.hanging-indent div.csl-entry {
-				margin-left:2em;
-				text-indent:-2em;
-				}
-				div.csl-left-margin {
-				min-width:2em;
-				float:left;
-				}
-				div.csl-right-inline {
-				margin-left:2em;
-				padding-left:1em;
-				}
-				div.csl-indent {
-				margin-left: 2em;
 				}
 
 				@font-face {
