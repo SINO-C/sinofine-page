@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><?xml-stylesheet href="/rss.xsl" type="text/xsl"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Home on 小猫</title>
+    <link>https://sinofine.me/</link>
+    <description>Recent content in Home on 小猫</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 19 Feb 2020 23:48:12 +0000</lastBuildDate>
+    <atom:link href="https://sinofine.me/atom.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Friends</title>
+      <link>https://sinofine.me/friends/</link>
+      <pubDate>Wed, 19 Feb 2020 23:48:12 +0000</pubDate>
+      <guid>https://sinofine.me/friends/</guid>
+      <description>&lt;p&gt;{{ range friends }}&#xA;{{.name}}&#xA;{{ end }}&lt;/p&gt;&#xA;&lt;style&gt;&#xA;  .friends-container article {&#xA;  margin: 2.5%;&#xA;  width: 45%;&#xA;  display: inline-flex;&#xA;  img {&#xA;  height: fit-content;&#xA;  }&#xA;  }&#xA;&lt;/style&gt;&#xA;&lt;div class=&#34;friends-container&#34;&gt;&#xA;&lt;/div&gt;</description>
+    </item>
+  </channel>
+</rss>
