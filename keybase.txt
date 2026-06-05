@@ -1,0 +1,56 @@
+==================================================================
+https://keybase.io/sinofine
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://sinofine.me
+  * I am sinofine (https://keybase.io/sinofine) on keybase.
+  * I have a public key ASAaGAURbSl9Nx89tmREb0hvBjtgRC8S_gNZWwSPPEHkRAo
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "01201a1805116d297d371f3db664446f486f063b60442f12fe03595b048f3c41e4440a",
+      "host": "keybase.io",
+      "kid": "01201a1805116d297d371f3db664446f486f063b60442f12fe03595b048f3c41e4440a",
+      "uid": "c2dda667c28c4bbf308715e4a0227c19",
+      "username": "sinofine"
+    },
+    "merkle_root": {
+      "ctime": 1597260133,
+      "hash": "0974e4d1173f617b897ed20c4ed4d9a6c157b3b8c8799db95eccb77f1798c5713986f458e81f67bc1e022d7ad0ff3ff08f9d86bb7815fb6cbab072f3c80ff229",
+      "hash_meta": "9bc5cb7e3570437080ef1b3dd161420d34652caa3b52fc05a887e4f430e9e55e",
+      "seqno": 17262691
+    },
+    "service": {
+      "entropy": "C5WHe5shveYoej5F5nm4WBye",
+      "hostname": "sinofine.me",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 2
+  },
+  "client": {
+    "name": "keybase.io go client",
+    "version": "5.5.0"
+  },
+  "ctime": 1597260191,
+  "expire_in": 504576000,
+  "prev": "de95d0b1133306d23ef4e5609eb37f66543d837878d7a09c290f774e6ba49e04",
+  "seqno": 48,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEgGhgFEW0pfTcfPbZkRG9IbwY7YEQvEv4DWVsEjzxB5EQKp3BheWxvYWTESpcCMMQg3pXQsRMzBtI+9OVgnrN/ZlQ9g3h416CcKQ93TmukngTEIGnMWW69fVBmKJ9BPJXzRxfkC62bs5iA9xSL3b2ua2MBAgHCo3NpZ8RAxsUa0N1I2PaJMNxen9TjAlo83fNArFRNwDLNkuqdCEuJYBQnIMPjmgq4xLCCS6HjqwroKB4QSsPLf2+5cFz+DqhzaWdfdHlwZSCkaGFzaIKkdHlwZQildmFsdWXEIGqms897J0eFnQmDkXXscMgmxpuk1ZtinVWR1aTZiDSmo3RhZ80CAqd2ZXJzaW9uAQ==
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/sinofine
+
+==================================================================
