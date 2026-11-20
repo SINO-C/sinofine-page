@@ -1,165 +1,285 @@
 <?xml version="1.0" encoding="utf-8"?>
-<xsl:stylesheet version="3.0"
+<xsl:stylesheet version="1.0"
                 xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
                 xmlns:atom="http://www.w3.org/2005/Atom">
-  <xsl:output method="html" version="1.0" encoding="UTF-8" indent="yes"/>
+  <xsl:output method="html" encoding="UTF-8" indent="yes"/>
+
   <xsl:template match="/">
-  <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
-    <head>
-      <title>
-        RSS Feed | <xsl:value-of select="/rss/channel/title"/>
-      </title>
-			<style>
-				:root {
-				--body-margin: 1rem;
-				--chinese-fonts: "Source Han Serif SC", "Noto Serif CJK SC";
-				--italic-chinese-fonts: STKaiTi,"楷体", KaiTi, SimKai;
-				--english-fonts: "CMU Concrete", "Dejavu Serif", "Iosevka Comfy Duo", "Iosevka Comfy Motion Duo", "Anonymous Pro", "Concrete";
-				--fonts: var(--english-fonts), var(--chinese-fonts), serif;
-				--math-fonts: "Concrete Math", "Dejavu Math TeX Gyre", "Euler Math", "Concrete-Math", math;
-				--page-width: 768px;
-				}
-				body {
-				color: #222;
-				font-family: var(--fonts);
-				font-weight: 500;
-				line-height: 1.5;
-				margin: var(--body-margin) auto;
-				max-width: var(--page-width);
-				min-height: calc(100vh - 2 * var(--body-margin));
-				display: flex;
-				flex-direction: column;
-				}
-				@media screen and (max-width: 820px){
-				body{
-        margin: var(--body-margin) 2em;
-        main {
-        text-align: left;
-        }
-				}
-				}
-				header {
-				border-bottom: 2px dashed #222;
-				margin-bottom: 1rem;
-				display: flex;
-				h1 {
-				flex: 1;
-        display: inline-block;
-				align-content: center;
-				}
-				nav {
-        display: inline-block;
-				align-content: center;
-        li {
-        display: inline-block;
-        margin: 0 .5em;
-        }
-				}
-				}
-				main{
-				text-align: justify;
-				text-wrap: pretty;
-				word-break: auto-phrase;
-				p {
-				text-align-last: left;
-				}
-				p > .post-date {
-				display: inline-flex;
-				font-size: small;
-				width: 7em;
-				padding: 0 .2em;
-				}
-				.post-date::before {
-				content: "[";
-				flex: 1;
-				}
-				.post-date::after {
-				content: "]";
-				flex: 1;
-				text-align-last: right;
-				}
-				}
+    <html lang="zh-CN">
+      <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <title>订阅更新 | <xsl:value-of select="atom:feed/atom:title"/></title>
+        <style>
+          @font-face {
+            font-family: Concrete;
+            font-style: normal;
+            font-weight: 400;
+            src: url("/fonts/cmunorm.woff") format("woff");
+          }
 
-				a {
-				color: #555;
-				text-decoration: none;
-				}
+          @font-face {
+            font-family: Concrete;
+            font-style: normal;
+            font-weight: 700;
+            src: url("/fonts/cmunobx.woff") format("woff");
+          }
 
-				h1 {
-				font-size: 1.5em;
-				}
+          :root {
+            --ink: #20211f;
+            --muted: #72736d;
+            --line: #dedfd8;
+            --accent: #b4472d;
+            --serif: Concrete, "Source Han Serif SC", "Noto Serif CJK SC", serif;
+            --sans: Inter, "Helvetica Neue", Arial, sans-serif;
+          }
 
-				@font-face {
-				font-family: Concrete;
-				font-style: normal;
-				font-weight: 400;
-				src: url("/fonts/cmunorm.woff") format("woff");
-				}
-				@font-face {
-				font-family: Concrete;
-				font-style: normal;
-				font-weight: 700;
-				src: url("/fonts/cmunobx.woff") format("woff");
-				}
-				@font-face {
-				font-family: Concrete;
-				font-style: italic;
-				font-weight: 400;
-				src: url("/fonts/cmunoti.woff") format("woff");
-				}
-				@font-face {
-				font-family: Concrete;
-				font-style: italic;
-				font-weight: 700;
-				src: url("/fonts/cmunobi.woff") format("woff");
-				}
-				@font-face {
-				font-family: Concrete-Math;
-				src: url("/fonts/Concrete-Math.woff") format("woff");
-				}
-			</style>
-    </head>
-    <body>
-			  <header>
-    <h1>小猫</h1>
-  <nav>
-    <ul>
-    <li>
-      <a href="/">Home</a>
-    </li>
-    <li>
-      <a aria-current="page" class="active" href="/posts/">Posts</a>
-    </li>
-    <li>
-      <a href="https://notes.sinofine.me/">Notes</a>
-    </li>
-    <li>
-      <a href="/atom.xml">Feed</a>
-    </li>
-    <li>
-      <a href="/about/">About</a>
-    </li>
-    <li>
-      <a href="/friends/">Friends</a>
-    </li>
-    </ul>
-  </nav>
+          * {
+            box-sizing: border-box;
+          }
 
-  </header>
-			<main>
-      <h1>Recent blog posts</h1>
-      <xsl:for-each select="/rss/channel/item">
-				<p>
-					<span class="post-date"><xsl:value-of select="substring(pubDate,6,11)" /></span>
-        <a>
-          <xsl:attribute name="href">
-            <xsl:value-of select="link"/>
-          </xsl:attribute>
-          <xsl:value-of select="title"/>
-        </a></p>
-      </xsl:for-each>
-			</main>
-    </body>
+          body {
+            color: var(--ink);
+            font-family: var(--serif);
+            font-size: 17px;
+            line-height: 1.62;
+            margin: 0 auto;
+            max-width: 1160px;
+            min-height: 100vh;
+            padding: 0 3rem;
+          }
+
+          header {
+            align-items: center;
+            border-bottom: 1px solid var(--line);
+            display: flex;
+            justify-content: space-between;
+            min-height: 92px;
+          }
+
+          .brand {
+            color: var(--ink);
+            font-size: 1.65rem;
+            font-weight: 700;
+            letter-spacing: -0.06em;
+            text-decoration: none;
+          }
+
+          nav {
+            display: flex;
+            font-family: var(--sans);
+            font-size: 0.7rem;
+            font-weight: 600;
+            gap: 1.7rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+          }
+
+          nav a {
+            color: var(--muted);
+            text-decoration: none;
+          }
+
+          nav a.active,
+          nav a:hover {
+            color: var(--accent);
+          }
+
+          main {
+            display: grid;
+            grid-template-columns: minmax(260px, 0.72fr) minmax(0, 1.28fr);
+            min-height: calc(100vh - 174px);
+          }
+
+          .feed-note {
+            border-right: 1px solid var(--line);
+            padding: 5rem 4.5rem 5rem 0;
+          }
+
+          .eyebrow {
+            color: var(--accent);
+            font-family: var(--sans);
+            font-size: 0.65rem;
+            font-weight: 700;
+            letter-spacing: 0.16em;
+            margin: 0 0 1.2rem;
+            text-transform: uppercase;
+          }
+
+          h1 {
+            font-size: clamp(2.4rem, 4vw, 3.8rem);
+            font-weight: 400;
+            letter-spacing: -0.055em;
+            line-height: 1.08;
+            margin: 0;
+          }
+
+          .explanation {
+            color: var(--muted);
+            font-size: 0.88rem;
+            margin: 2.5rem 0;
+            max-width: 20rem;
+          }
+
+          .feed-url {
+            border-bottom: 1px solid var(--line);
+            border-top: 1px solid var(--line);
+            color: var(--muted);
+            font-family: var(--sans);
+            font-size: 0.68rem;
+            overflow-wrap: anywhere;
+            padding: 0.8rem 0;
+          }
+
+          .entries {
+            padding: 5rem 0 5rem 5rem;
+          }
+
+          .entries-head {
+            border-bottom: 1px solid var(--ink);
+            margin-bottom: 0.5rem;
+            padding-bottom: 1.5rem;
+          }
+
+          .entries-head .eyebrow {
+            margin-bottom: 0.45rem;
+          }
+
+          h2 {
+            font-size: 1.65rem;
+            font-weight: 400;
+            margin: 0;
+          }
+
+          ol {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+          }
+
+          li {
+            border-bottom: 1px solid var(--line);
+            padding: 1.35rem 0;
+          }
+
+          li a {
+            color: var(--ink);
+            display: block;
+            font-size: 1.02rem;
+            line-height: 1.35;
+            text-decoration: none;
+          }
+
+          li a:hover {
+            color: var(--accent);
+          }
+
+          time {
+            color: var(--muted);
+            display: block;
+            font-family: var(--sans);
+            font-size: 0.64rem;
+            letter-spacing: 0.06em;
+            margin-top: 0.55rem;
+            text-transform: uppercase;
+          }
+
+          footer {
+            border-top: 1px solid var(--line);
+            color: var(--muted);
+            font-family: var(--sans);
+            font-size: 0.62rem;
+            letter-spacing: 0.04em;
+            padding: 1.2rem 0 2rem;
+          }
+
+          footer p {
+            margin: 0;
+          }
+
+          @media screen and (max-width: 900px) {
+            body {
+              padding: 0 1.5rem;
+            }
+
+            main {
+              grid-template-columns: 1fr;
+            }
+
+            .feed-note {
+              border-bottom: 1px solid var(--line);
+              border-right: 0;
+              padding: 4rem 0;
+            }
+
+            .entries {
+              padding: 4rem 0;
+            }
+          }
+
+          @media screen and (max-width: 600px) {
+            header {
+              align-items: start;
+              display: block;
+              padding: 1.2rem 0;
+            }
+
+            nav {
+              flex-wrap: wrap;
+              gap: 0.35rem 1rem;
+              margin-top: 0.8rem;
+            }
+          }
+        </style>
+      </head>
+      <body>
+        <header>
+          <a class="brand" href="/">小猫</a>
+          <nav aria-label="Main navigation">
+            <a href="/">Home</a>
+            <a href="/posts/">Posts</a>
+            <a href="https://notes.sinofine.me/">Notes</a>
+            <a class="active" href="/atom.xml">Feed</a>
+            <a href="https://neko.ist/about/">About</a>
+            <a href="/friends/">Friends</a>
+          </nav>
+        </header>
+
+        <main>
+          <section class="feed-note">
+            <p class="eyebrow">Atom feed</p>
+            <h1>订阅<br/>更新。</h1>
+            <p class="explanation">
+              这是供阅读器使用的 Atom 订阅源。将当前页面地址添加到你的阅读器，即可收到新文章。
+            </p>
+            <p class="feed-url">
+              <xsl:value-of select="atom:feed/atom:link[@rel='self']/@href"/>
+            </p>
+          </section>
+
+          <section class="entries">
+            <div class="entries-head">
+              <p class="eyebrow">Published entries</p>
+              <h2>订阅内容</h2>
+            </div>
+            <ol>
+              <xsl:for-each select="atom:feed/atom:entry">
+                <li>
+                  <a href="{atom:link/@href}">
+                    <xsl:value-of select="atom:title"/>
+                  </a>
+                  <time>
+                    <xsl:value-of select="substring(atom:published, 1, 10)"/>
+                  </time>
+                </li>
+              </xsl:for-each>
+            </ol>
+          </section>
+        </main>
+
+        <footer>
+          <p>Atom 1.0 feed / styled for human readers</p>
+        </footer>
+      </body>
     </html>
   </xsl:template>
 </xsl:stylesheet>

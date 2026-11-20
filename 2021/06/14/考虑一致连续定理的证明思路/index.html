@@ -1,79 +1,35 @@
-<!DOCTYPE html>
-<html lang="en-us" dir="ltr">
-<head>
-  <meta charset="utf-8">
-<meta name="viewport" content="width=device-width">
-<title>考虑一致连续定理的证明思路 | 小猫</title>
-<link rel="icon" href="/favicon.png"><link rel="stylesheet" href="/css/main.min.2753a7ae1b1f1ae49e7f1177b2f8ebb721f461241b28bb2d2c929d1edca77a81.css" integrity="sha256-J1OnrhsfGuSefxF3svjrtyH0YSQbKLstLJKdHtyneoE=" crossorigin="anonymous">
+<!DOCTYPE html><html lang="en-us" dir="ltr"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width"><meta name="description" content="小猫的数学与随笔博客"><title>考虑一致连续定理的证明思路 | 小猫</title><link rel="icon" href="data:image/png;base64,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"><link rel="alternate" type="application/atom+xml" href="/atom.xml" title="小猫"><style>:root{--body-margin: 1rem;--chinese-fonts: "Source Han Serif SC", "Noto Serif CJK SC";--italic-chinese-fonts: STKaiTi,"楷体", KaiTi, SimKai;--english-fonts: "CMU Concrete", "Dejavu Serif", "Iosevka Comfy Duo", "Iosevka Comfy Motion Duo", "Anonymous Pro", "Concrete";--fonts: var(--english-fonts), var(--chinese-fonts), serif;--math-fonts: "Concrete Math", "Dejavu Math TeX Gyre", "Euler Math", "Concrete-Math", math;--page-width: 768px}body{color:#222;font-family:var(--fonts);font-weight:500;line-height:1.5;margin:var(--body-margin) auto;max-width:var(--page-width);min-height:calc(100vh - 2 * var(--body-margin));display:flex;flex-direction:column}@media screen and (max-width:820px){body{h1,h2,h3,h4,h5,h6{&:before{width:unset;margin-left:unset}}margin:var(--body-margin) 2em;main{text-align:left}}}header{border-bottom:2px dashed #222;margin-bottom:1rem;display:flex;h1{flex:1;display:inline-block;align-content:center}nav{display:inline-block;align-content:center;li{display:inline-block;margin:0 .5em}}}main{text-align:justify;text-wrap:pretty;word-break:auto-phrase;p{text-align-last:left}.title-head,time{display:block;text-align:center}p>.post-date{display:inline-flex;font-size:small;width:7em;padding:0 .2em}.post-date:before{content:"[";flex:1}.post-date:after{content:"]";flex:1;text-align-last:right}}footer{margin-top:1rem}a{color:#555;text-decoration:none}math{font-family:var(--math-fonts);max-width:100%;overflow-x:auto;overflow-y:hidden}math[display=block]{margin:1em 0;text-align-last:auto}div.abstract{margin:2em;text-align:left;font-size:85%}div.abstract-title{font-weight:700;text-align:center;padding:0;margin-bottom:.5em}h1,h2,h3,h4,h5,h6{font-size:1.5em;&:before{display:inline-block;color:#aaa;width:3em;margin-left:-3em;text-align:end}}h5,h6{font-size:1em;font-style:italic}h6{font-weight:400}h2:before{content:"* "}h3:before{content:"** "}h4:before{content:"*** "}h5:before{content:"**** "}h6:before{content:"***** "}.friends{display:flex;flex-wrap:wrap;.friend-card{width:calc(var(--page-width) / 2 - 2em);margin:1em;display:inline-flex;border-left:0px #069dff solid;transition:border .1s ease-in;box-sizing:border-box;img{height:fit-content;object-fit:cover;aspect-ratio:1}.friend-info{padding-left:.5em;height:100px;h3{font-size:1em;line-height:1;&:before{content:none}}}&:hover{border-left-width:5px}}}em{font-family:var(--english-fonts),var(--italic-chinese-fonts),monospace;font-synthesis:none}.table-container,.displaymath-container,.sourceCode{max-width:100%;overflow-x:auto;overflow-y:hidden}div.csl-entry{clear:both}.hanging-indent div.csl-entry{margin-left:2em;text-indent:-2em}div.csl-left-margin{min-width:2em;float:left}div.csl-right-inline{margin-left:2em;padding-left:1em}div.csl-indent{margin-left:2em}@font-face{font-family:Concrete;font-style:normal;font-weight:400;src:url(/fonts/cmunorm.woff) format("woff")}@font-face{font-family:Concrete;font-style:normal;font-weight:700;src:url(/fonts/cmunobx.woff) format("woff")}@font-face{font-family:Concrete;font-style:italic;font-weight:400;src:url(/fonts/cmunoti.woff) format("woff")}@font-face{font-family:Concrete;font-style:italic;font-weight:700;src:url(/fonts/cmunobi.woff) format("woff")}@font-face{font-family:Concrete-Math;src:url(/fonts/Concrete-Math.woff) format("woff")}
+</style></head> <body> <header> <h1>小猫</h1> <nav aria-label="Main navigation"> <ul><li><a href="/">Home</a></li> <li><a href="/posts/">Posts</a></li> <li><a href="https://notes.sinofine.me/">Notes</a></li> <li><a href="/atom.xml">Feed</a></li> <li><a href="https://neko.ist/about/">About</a></li> <li><a href="/friends/">Friends</a></li> </ul> </nav> </header> <main>   <article class="post"> <h1 class="title-head">考虑一致连续定理的证明思路</h1> <time datetime="2021-06-14T00:00:00.000Z">June 14, 2021</time> <div class="post-content"><body><style>.mathyml-block-center {
+    text-align: center;
+}
 
-</head>
-<body>
-  <header>
-    <h1>小猫</h1>
-  <nav>
-    <ul>
-    <li>
-      <a href="/">Home</a>
-    </li>
-    <li>
-      <a aria-current="true" class="ancestor" href="/posts/">Posts</a>
-    </li>
-    <li>
-      <a href="https://notes.sinofine.me/">Notes</a>
-    </li>
-    <li>
-      <a href="/atom.xml">Feed</a>
-    </li>
-    <li>
-      <a href="https://neko.ist/about/">About</a>
-    </li>
-    <li>
-      <a href="/friends/">Friends</a>
-    </li>
-    </ul>
-  </nav>
+.mathyml-inline-span {
+    display: inline-block;
+}
 
-  </header>
-  <main>
-    
-  <h1 class="title-head">考虑一致连续定理的证明思路</h1>
+.mathyml-align-right {
+    text-align: right;
+    padding-left: 0em;
+    padding-right: 0em;
+}
 
-  
-  
-  <time datetime="2021-06-14T00:17:59&#43;00:00">June 14, 2021</time>
+.mathyml-align-left {
+    text-align: left;
+    padding-left: 0em;
+    padding-right: 0em;
+}
 
-  <h3 id="一致连续性定理">一致连续性定理</h3>
-<p>也称 <em>Cantor定理</em> , 叙述如下:</p>
-<blockquote>
-<p><strong>Cantor定理</strong> 闭区间连续函数一致连续.</p>
-</blockquote>
-<h4 id="考虑证明思路">考虑证明思路?</h4>
-<p>如果用常规思路判断,则可以列出要证的定理:
-<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>∀</mo><mrow><mi>ϵ</mi><mo>&gt;</mo><mn>0</mn><mo>;</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo>∈</mo><mi mathvariant="bold-italic">𝑰</mi></mrow><mo>∃</mo><mrow><mi>δ</mi><mo>&gt;</mo><mn>0</mn></mrow><mo>,</mo><mo stretchy="false" form="prefix">|</mo><mi>a</mi><mo>−</mo><mi>b</mi><mo stretchy="false" form="prefix">|</mo><mo>&lt;</mo><mi>δ</mi><mo>→</mo><mo stretchy="false" form="prefix">|</mo><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mi>a</mi><mo stretchy="false" form="postfix">)</mo><mo>−</mo><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mi>b</mi><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="prefix">|</mo><mo>&lt;</mo><mi>ϵ</mi></mrow><annotation encoding="application/x-tex">\forall{\epsilon&gt;0;a,b\in\mathbf{I}}\exists{\delta&gt;0}, |a-b|&lt;\delta\rightarrow|f(a)-f(b)|&lt;\epsilon</annotation></semantics></math>
-而由连续知
-<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>∀</mo><mrow><mi>ϵ</mi><mo>&gt;</mo><mn>0</mn><mo>;</mo><msub><mi>x</mi><mn>0</mn></msub><mo>∈</mo><mi mathvariant="bold-italic">𝑰</mi></mrow><mo>∃</mo><mrow><mi>δ</mi><mo>&gt;</mo><mn>0</mn></mrow><mo>,</mo><mo stretchy="false" form="prefix">|</mo><mi>x</mi><mo>−</mo><msub><mi>x</mi><mn>0</mn></msub><mo stretchy="false" form="prefix">|</mo><mo>&lt;</mo><mi>δ</mi><mo>→</mo><mo stretchy="false" form="prefix">|</mo><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo><mo>−</mo><mi>f</mi><mo stretchy="false" form="prefix">(</mo><msub><mi>x</mi><mn>0</mn></msub><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="prefix">|</mo><mo>&lt;</mo><mi>ϵ</mi></mrow><annotation encoding="application/x-tex">\forall{\epsilon&gt;0;x_0 \in\mathbf{I}}\exists{\delta&gt;0}, |x-x_0|&lt;\delta\rightarrow|f(x)-f(x_0)|&lt;\epsilon\tag{1}</annotation></semantics></math>
-对于<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>∀</mo><msub><mi>x</mi><mn>0</mn></msub><mo>∃</mo><mi>δ</mi></mrow><annotation encoding="application/x-tex">\forall x_0\exists\delta</annotation></semantics></math>使上式成立,
-若取<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>δ</mi><mo>=</mo><mrow><mi mathvariant="normal">max</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">{</mo><msub><mi>δ</mi><mn>0</mn></msub><mo>,</mo><msub><mi>δ</mi><mn>1</mn></msub><mo>,</mo><mi>⋯</mi><mo>,</mo><msub><mi>δ</mi><mi>n</mi></msub><mo>,</mo><mi>⋯</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\delta = \max\{\delta_0,\delta_1,\cdots,\delta_n,\cdots\}</annotation></semantics></math>则可证.</p>
-<p>但是此处取<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>δ</mi><mi>k</mi></msub><annotation encoding="application/x-tex">\delta_k</annotation></semantics></math>实际上涉及到未解决的无穷个取值,
-则不能这样考虑. 由是自然想到反证: 是否存在
-<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>∃</mo><mi>ϵ</mi><mo>&gt;</mo><mn>0</mn><mo>∀</mo><mi>δ</mi><mo>&gt;</mo><mn>0</mn><mo>∃</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo>∈</mo><mi mathvariant="bold-italic">𝑰</mi><mo>,</mo><mo stretchy="false" form="prefix">|</mo><mi>a</mi><mo>−</mo><mi>b</mi><mo stretchy="false" form="prefix">|</mo><mo>&lt;</mo><mi>δ</mi><mo>→</mo><mo stretchy="false" form="prefix">|</mo><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mi>a</mi><mo stretchy="false" form="postfix">)</mo><mo>−</mo><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mi>b</mi><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="prefix">|</mo><mo>&gt;</mo><mi>ϵ</mi></mrow><annotation encoding="application/x-tex">\exists\epsilon&gt;0\forall\delta&gt;0\exists a,b\in \mathbf{I},|a-b|&lt;\delta\rightarrow|f(a)-f(b)|&gt;\epsilon</annotation></semantics></math>
-选取点列<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>δ</mi><mn>0</mn></msub><mo>,</mo><msub><mi>δ</mi><mn>1</mn></msub><mo>,</mo><mi>⋯</mi></mrow><annotation encoding="application/x-tex">\delta_0,\delta_1,\cdots</annotation></semantics></math>使满足<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>∀</mo><mrow><mi>k</mi><mo>∈</mo><mi mathvariant="double-struck">ℕ</mi></mrow><mo>,</mo><msub><mi>δ</mi><mi>k</mi></msub><mo>&gt;</mo><msub><mi>δ</mi><mrow><mi>k</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\forall{k\in\mathbb{N}},\delta_k&gt;\delta_{k+1}&gt;0</annotation></semantics></math>,
-由是可标记对应的<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">|</mo><msub><mi>a</mi><mi>k</mi></msub><mo>−</mo><msub><mi>b</mi><mi>k</mi></msub><mo stretchy="false" form="prefix">|</mo><mo>&lt;</mo><msub><mi>δ</mi><mi>k</mi></msub></mrow><annotation encoding="application/x-tex">|a_k-b_k|&lt;\delta_k</annotation></semantics></math>.
-由聚点定理知, 有界点列有收敛子列,
-则有<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>b</mi><msub><mi>n</mi><mi>k</mi></msub></msub><mo>→</mo><msub><mi>x</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">b_{n_k}\rightarrow x_0</annotation></semantics></math>.</p>
-<p>取出对应的子列则有
-<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>∃</mo><mi>ϵ</mi><mo>&gt;</mo><mn>0</mn><mo>;</mo><mi>C</mi><mo>∈</mo><mi mathvariant="bold-italic">𝑰</mi><mo>∀</mo><mi>δ</mi><mo>&gt;</mo><mn>0</mn><mo>,</mo><mo stretchy="false" form="prefix">|</mo><mi>a</mi><mo>−</mo><mi>C</mi><mo stretchy="false" form="prefix">|</mo><mo>&lt;</mo><mi>δ</mi><mo>→</mo><mo stretchy="false" form="prefix">|</mo><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mi>a</mi><mo stretchy="false" form="postfix">)</mo><mo>−</mo><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mi>C</mi><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="prefix">|</mo><mo>&gt;</mo><mi>ϵ</mi></mrow><annotation encoding="application/x-tex">\exists\epsilon&gt;0;C\in \mathbf{I}\forall\delta&gt;0,|a-C|&lt;\delta\rightarrow|f(a)-f(C)|&gt;\epsilon\tag{2}</annotation></semantics></math>
-而<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(1)</annotation></semantics></math>与<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mn>2</mn><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(2)</annotation></semantics></math>矛盾,由是
-<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>∀</mo><mrow><mi>ϵ</mi><mo>&gt;</mo><mn>0</mn><mo>;</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo>∈</mo><mi mathvariant="bold-italic">𝑰</mi></mrow><mo>∃</mo><mrow><mi>δ</mi><mo>&gt;</mo><mn>0</mn></mrow><mo>,</mo><mo stretchy="false" form="prefix">|</mo><mi>a</mi><mo>−</mo><mi>b</mi><mo stretchy="false" form="prefix">|</mo><mo>&lt;</mo><mi>δ</mi><mo>→</mo><mo stretchy="false" form="prefix">|</mo><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mi>a</mi><mo stretchy="false" form="postfix">)</mo><mo>−</mo><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mi>b</mi><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="prefix">|</mo><mo>&lt;</mo><mi>ϵ</mi></mrow><annotation encoding="application/x-tex">\forall{\epsilon&gt;0;a,b\in\mathbf{I}}\exists{\delta&gt;0}, |a-b|&lt;\delta\rightarrow|f(a)-f(b)|&lt;\epsilon</annotation></semantics></math>
-成立.</p>
+@media screen and (-webkit-min-device-pixel-ratio: 0) and (min-resolution: 0.001dpcm) {
+    .mathyml-align-right {
+        text-align: -webkit-right;
+        padding-left: 0em;
+        padding-right: 0em;
+    }
 
-  
-
-
-  </main>
-  <footer>
-    <p>Copyright 2026. Proudly powered by Hugo & Pandoc & TeXLive & Emacs. I suggest you use Firefox for better experience. The site is built on Thu, 11 Jun 2026, at 21:31:22 CST.</p>
-
-  </footer>
-</body>
-</html>
+    .mathyml-align-left {
+        text-align: -webkit-left;
+        padding-left: 0em;
+        padding-right: 0em;
+    }
+}
+</style><h3>一致连续性定理</h3><p>也称 <em>Cantor定理</em> , 叙述如下:</p><blockquote><strong>Cantor定理</strong> 闭区间连续函数一致连续.</blockquote><h4>考虑证明思路?</h4><p>如果用常规思路判断,则可以列出要证的定理:</p><math display="block"><mrow><mo>∀</mo><mi mathvariant="normal">ϵ</mi><mo>&gt;</mo><mrow><mn>0</mn><mo>;</mo><mi>𝑎</mi><mo>,</mo><mi>𝑏</mi></mrow><mo>∈</mo><mi mathvariant="normal">𝐈</mi><mo>∃</mo><mi>𝛿</mi><mo>&gt;</mo><mrow><mn>0</mn><mo>,</mo><mo>|</mo><mi>𝑎</mi></mrow><mo>−</mo><mrow><mi>𝑏</mi><mo>|</mo><mo>&lt;</mo></mrow><mi>𝛿</mi><mrow><mo>→</mo><mo>|</mo><mrow><mi>𝑓</mi><mrow><mo>(</mo><mi>𝑎</mi><mo>)</mo></mrow></mrow><mo>−</mo></mrow><mrow><mrow><mi>𝑓</mi><mrow><mo>(</mo><mi>𝑏</mi><mo>)</mo></mrow></mrow><mo>|</mo><mo>&lt;</mo></mrow><mi mathvariant="normal">ϵ</mi></mrow></math><p>而由连续知</p><math display="block"><mrow><mo>∀</mo><mi mathvariant="normal">ϵ</mi><mo>&gt;</mo><mrow><mn>0</mn><mo>;</mo><msub><mi>𝑥</mi><mn>0</mn></msub></mrow><mo>∈</mo><mi mathvariant="normal">𝐈</mi><mo>∃</mo><mi>𝛿</mi><mo>&gt;</mo><mrow><mn>0</mn><mo>,</mo><mo>|</mo><mi>𝑥</mi></mrow><mo>−</mo><mrow><msub><mi>𝑥</mi><mn>0</mn></msub><mo>|</mo><mo>&lt;</mo></mrow><mi>𝛿</mi><mrow><mo>→</mo><mo>|</mo><mrow><mi>𝑓</mi><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow></mrow><mo>−</mo></mrow><mrow><mrow><mi>𝑓</mi><mrow><mo>(</mo><msub><mi>𝑥</mi><mn>0</mn></msub><mo>)</mo></mrow></mrow><mo>|</mo><mo>&lt;</mo></mrow><mi mathvariant="normal">ϵ</mi></mrow></math><p>对于<span><math><mrow><mo>∀</mo><msub><mi>𝑥</mi><mn>0</mn></msub><mo>∃</mo><mi>𝛿</mi></mrow></math></span>使上式成立, 若取<span><math><mrow><mi>𝛿</mi><mo>=</mo><mi mathvariant="normal">max</mi><mrow><mo>{</mo><mrow><msub><mi>𝛿</mi><mn>0</mn></msub><mo>,</mo><msub><mi>𝛿</mi><mn>1</mn></msub><mo>,</mo><mo>⋯</mo><mo>,</mo><msub><mi>𝛿</mi><mi>𝑛</mi></msub><mo>,</mo><mo>⋯</mo></mrow><mo>}</mo></mrow></mrow></math></span>则可证.</p><p>但是此处取<span><math><msub><mi>𝛿</mi><mi>𝑘</mi></msub></math></span>实际上涉及到未解决的无穷个取值, 则不能这样考虑. 由是自然想到反证: 是否存在</p><math display="block"><mrow><mo>∃</mo><mi mathvariant="normal">ϵ</mi><mo>&gt;</mo><mn>0</mn><mo>∀</mo><mi>𝛿</mi><mo>&gt;</mo><mn>0</mn><mo>∃</mo><mrow><mi>𝑎</mi><mo>,</mo><mi>𝑏</mi></mrow><mo>∈</mo><mrow><mi mathvariant="normal">𝐈</mi><mo>,</mo><mo>|</mo><mi>𝑎</mi></mrow><mo>−</mo><mrow><mi>𝑏</mi><mo>|</mo><mo>&lt;</mo></mrow><mi>𝛿</mi><mrow><mo>→</mo><mo>|</mo><mrow><mi>𝑓</mi><mrow><mo>(</mo><mi>𝑎</mi><mo>)</mo></mrow></mrow><mo>−</mo></mrow><mrow><mrow><mi>𝑓</mi><mrow><mo>(</mo><mi>𝑏</mi><mo>)</mo></mrow></mrow><mo>|</mo><mo>&gt;</mo></mrow><mi mathvariant="normal">ϵ</mi></mrow></math><p>选取点列<span><math><mrow><msub><mi>𝛿</mi><mn>0</mn></msub><mo>,</mo><msub><mi>𝛿</mi><mn>1</mn></msub><mo>,</mo><mo>⋯</mo></mrow></math></span>使满足<span><math><mrow><mo>∀</mo><mi>𝑘</mi><mo>∈</mo><mrow><mi>ℕ</mi><mo>,</mo><msub><mi>𝛿</mi><mi>𝑘</mi></msub></mrow><mo>&gt;</mo><msub><mi>𝛿</mi><mrow><mi>𝑘</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>&gt;</mo><mn>0</mn></mrow></math></span>, 由是可标记对应的<span><math><mrow><mrow><mo>|</mo><msub><mi>𝑎</mi><mi>𝑘</mi></msub></mrow><mo>−</mo><mrow><msub><mi>𝑏</mi><mi>𝑘</mi></msub><mo>|</mo><mo>&lt;</mo></mrow><msub><mi>𝛿</mi><mi>𝑘</mi></msub></mrow></math></span>. 由聚点定理知, 有界点列有收敛子列, 则有<span><math><mrow><msub><mi>𝑏</mi><msub><mi>𝑛</mi><mi>𝑘</mi></msub></msub><mo>→</mo><msub><mi>𝑥</mi><mn>0</mn></msub></mrow></math></span>.</p><p>取出对应的子列则有</p><math display="block"><mrow><mo>∃</mo><mi mathvariant="normal">ϵ</mi><mo>&gt;</mo><mrow><mn>0</mn><mo>;</mo><mi>𝐶</mi></mrow><mo>∈</mo><mi mathvariant="normal">𝐈</mi><mo>∀</mo><mi>𝛿</mi><mo>&gt;</mo><mrow><mn>0</mn><mo>,</mo><mo>|</mo><mi>𝑎</mi></mrow><mo>−</mo><mrow><mi>𝐶</mi><mo>|</mo><mo>&lt;</mo></mrow><mi>𝛿</mi><mrow><mo>→</mo><mo>|</mo><mrow><mi>𝑓</mi><mrow><mo>(</mo><mi>𝑎</mi><mo>)</mo></mrow></mrow><mo>−</mo></mrow><mrow><mrow><mi>𝑓</mi><mrow><mo>(</mo><mi>𝐶</mi><mo>)</mo></mrow></mrow><mo>|</mo><mo>&gt;</mo></mrow><mi mathvariant="normal">ϵ</mi></mrow></math><p>而<span><math><mrow><mo>(</mo><mn>1</mn><mo>)</mo></mrow></math></span>与<span><math><mrow><mo>(</mo><mn>2</mn><mo>)</mo></mrow></math></span>矛盾,由是</p><math display="block"><mrow><mo>∀</mo><mi mathvariant="normal">ϵ</mi><mo>&gt;</mo><mrow><mn>0</mn><mo>;</mo><mi>𝑎</mi><mo>,</mo><mi>𝑏</mi></mrow><mo>∈</mo><mi mathvariant="normal">𝐈</mi><mo>∃</mo><mi>𝛿</mi><mo>&gt;</mo><mrow><mn>0</mn><mo>,</mo><mo>|</mo><mi>𝑎</mi></mrow><mo>−</mo><mrow><mi>𝑏</mi><mo>|</mo><mo>&lt;</mo></mrow><mi>𝛿</mi><mrow><mo>→</mo><mo>|</mo><mrow><mi>𝑓</mi><mrow><mo>(</mo><mi>𝑎</mi><mo>)</mo></mrow></mrow><mo>−</mo></mrow><mrow><mrow><mi>𝑓</mi><mrow><mo>(</mo><mi>𝑏</mi><mo>)</mo></mrow></mrow><mo>|</mo><mo>&lt;</mo></mrow><mi mathvariant="normal">ϵ</mi></mrow></math><p>成立.</p></body></div> </article>   </main> <footer> <p>Copyright 2026. Proudly powered by Astro &amp; Typst &amp; Emacs. I suggest you use Firefox for better experience. The site is built on Fri, 20 Nov 2026, at 18:56:57 CST.</p> </footer> </body></html>
